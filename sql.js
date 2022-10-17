@@ -9,6 +9,9 @@ const foreignKey = 'FOREIGN KEY -FK';
 // Crear Base de Datos. Ej: tienda online
  const crearDB = `CREATE DATABASE tienda_online`;
 
+ //Tipos de Datos: Numéricos: INT, TINYINT, BIGINT, FLOAT; String: VARCHAR, TEXT, CHAR; 
+ //Fecha y Hora: DATE, DATETIME, TIME, TIMESTAMP; 
+ 
  //Crear Tabla. Ej productos
  const crearTabla = `CREATE TABLE productos(
     id_product INT PRIMARY KEY AUTO_INCREMENT,
