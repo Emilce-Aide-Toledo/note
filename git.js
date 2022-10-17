@@ -31,10 +31,3 @@ const branch = comando('git branch' || 'git branch RAMA', 'Permite ver en que ra
 const checkout= comando('git checkout RAMA', 'Permitira cambiar de RAMA');
 
 const branch1 = comando('git branch -d RAMA' || 'git branch -D', 'Elimina la rama de nuestro repositorio local.');
-
-
-
-
-
-
-
