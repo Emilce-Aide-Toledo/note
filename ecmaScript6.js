@@ -139,7 +139,7 @@ const asyncFunction = async() => {
     try {
       const response = await helloWord();
       return response
-    } catch (error) {
+    } catch (error) { // desde ES10 ya no es necesario agregar (error)
       return error
     }
 };
@@ -185,3 +185,94 @@ helloWord()
 //Regex
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/
 const match = regexData.exec('2018-04-20');
+
+
+//ECMAScript 10
+//flat()
+let arrayNum1 =[2, 4, 6, [5, 6, 7, 8, [8, 6, 8], 3], 6];
+arrayNum1.flat(2);
+
+//flatMap()
+arrayNum1.flatMap(el => el ** 2)
+
+//trim() . Eliminar espacios. 
+let dia ='    Lunes   ';
+dia.trim();
+
+//trimStart() || trimLeft()
+let dia2 ='    Martes    ';
+dia2.trimStart()
+
+//trimEnd() || trimRight()
+dia2.trimEnd();
+
+//Object.fromEntries()
+const arrayEntries = [
+    [ 'name', 'Diego' ],
+    [ 'email', 'diegp@gmail.com' ],
+    [ 'age', 26 ]
+  ];
+  const usuario5 = Object.fromEntries(arrayEntries);
+
+  //Symbol
+  const nombre1 = Symbol('Emilce');
+
+
+
+  //ECMAScript 11
+  // Importación dinámica
+const boton = document.getElementById("boton");
+boton.addEventListener("click", async () => {
+    const modulo = await import('./modulo.js')
+    modulo.funcion()
+});
+
+//Big Int
+const number1 = 55n;
+const number2 = BigInt(55);
+
+//Promise.all()
+Promise.all([promise1, promise2, promise3]) //  se resolverá, si y solo si todas las promesas fueron resueltas
+
+//Promise.allSettled()
+Promise.allSettled([promise1, promise2, promise3]) // devuelve el valor de cada promesa, haya sido resuelta o rechazada
+
+//Operador Nullish Coalescing - ??
+const usuario7 = {}
+const nombre7= usuario7.name ?? 'Emilce';
+
+//Encadenamiento opcional - ?
+console.log(usuario7.redes?.facebook);
+
+//ECMAScript 12
+//replaceAll()
+const mensaje = 'Manuel viaja con su hermana. A Manuel le encanta viajar con ella.';
+mensaje.replace('Manuel', 'Francisco');
+
+//Métodos privados de clases
+class Msg {
+    #private(valor){
+      console.log(valor)
+    }
+  };
+  
+  const msg  = new Msg();
+
+//Promise.any()
+Promise.any([promise1, promise2, promise3])//retornará la primera promesa que sea resuelta y se rechazará si todas las promesas son rechazadas
+
+//Expresiones y operadores: 
+// Asignación AND (&&=), en caso de cumplirse una verdad, asigna un valor a una variable
+let hi = true
+hi ??= "Hola"
+console.log(hi) 
+
+// Asignación OR (||=), en caso de cumplirse una falsedad, asigna un valor a una variable
+let hey = true
+hey ||= "Hey"
+console.log(hey)
+
+// Asignación Nullish (??=), en caso de cumplirse undefined o null, asigna un valor a una variable
+let saludo = undefined
+saludo ??= "Hola"
+console.log(saludo)
