@@ -244,6 +244,8 @@ const nombre7= usuario7.name ?? 'Emilce';
 //Encadenamiento opcional - ?
 console.log(usuario7.redes?.facebook);
 
+
+
 //ECMAScript 12
 //replaceAll()
 const mensaje = 'Manuel viaja con su hermana. A Manuel le encanta viajar con ella.';
@@ -276,3 +278,30 @@ console.log(hey)
 let saludo = undefined
 saludo ??= "Hola"
 console.log(saludo)
+
+
+//ECMAScript 13
+//Top level await
+const response = await fetch('url');
+
+try{
+    const response = await fetch('url');
+}catch{
+    console.log(error.message);
+}
+
+//.at()
+const numArr = [1, 33, 65, 654, 6433];
+numArr.at(1); // 33
+numArr.at(-1); //6433
+
+//Object.hasOwn(). Retorna true o false dependiendo si se encuentra dentro del objeto o no. 
+const user9 = {
+    name: 'Emi',
+    age: 30,
+}
+
+Object.hasOwn(user9, 'name');
+
+//Private properties y Methods. Se utiliza #
+
