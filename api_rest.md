@@ -50,4 +50,11 @@ Una buena RESTful API que cumple con todos los constrainst de REST debería tene
 
  ![](https://i.ibb.co/3Fx0KVv/gAYHTI0.png)
  
- 
+ #### HTTP Status Codes
+Los códigos de estado HTTP se dividen en 5 «tipos», incluyen:
+
+- **1XX**:  la solicitud iniciada por el navegador continúa.
+- **2XX**: los códigos con éxito regresaron cuando la solicitud del navegador fue recibida, entendida y procesada por el servidor.
+- **3XX**: Códigos de redireccionamiento devueltos cuando un nuevo recurso ha sido sustituido por el recurso solicitado.
+- **4XX**: Códigos de error del cliente que indican que hubo un problema con la solicitud.
+- **5XX**: Códigos de error del servidor que indican que la solicitud fue aceptada, pero que un error en el servidor impidió que se cumpliera.
