@@ -41,4 +41,13 @@ El servidor expone la API REST y el cliente hace uso de ella. El servidor almace
 - Los recursos de tu hardware son limitados.
 
 Flujo de comunicación entre usuarios, frontend y backend
+
 ![](https://i.ibb.co/7QQSBNN/Response-del-servidor-con-el-HTML-del-home-de-Platzi-2.gif)
+
+#### Endpoints y query parameters
+
+Una buena RESTful API que cumple con todos los constrainst de REST debería tener una clara documentación que especifique cada uno de los endpoints y query parameters disponibles para solicitar, editar, crear o eliminar recursos en el servidor
+
+ ![](https://i.ibb.co/3Fx0KVv/gAYHTI0.png)
+ 
+ 
