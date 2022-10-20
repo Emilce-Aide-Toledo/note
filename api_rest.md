@@ -69,7 +69,7 @@ Una de las cosas que especifica el protocolo HTTP son los verbos:
 
 **GET:** solicita dato/ recurso.
 
-**HEAD:**  solicita encabezados HTTP del servidor como si el documento se solicitara mediante el método HTTP GET . La única diferencia entre las solicitudes HTTP HEAD y GET es que para HTTP HEAD, el servidor solo devuelve encabezados sin cuerpo
+**HEAD:**  solicita encabezados HTTP del servidor como si el documento se solicitara mediante el método HTTP GET . La única diferencia entre las solicitudes HTTP HEAD y GET es que para HTTP HEAD, el servidor solo devuelve encabezados sin cuerpo. Ver: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
 
 **POST:**  envia dato/ recurso.
 
@@ -78,3 +78,85 @@ Una de las cosas que especifica el protocolo HTTP son los verbos:
 **PATCH:** reemplaza parcialmente un recurso.
 
 **DELETE:** elimina un recurso.
+
+
+## HTTP headers
+
+Los headers de API son como una fuente adicional de información para cada llamada de API que realiza. Su trabajo es representar los metadatos asociados con una solicitud y respuesta de API.
+
+### Header de autorización
+HTTP nos brinda un marco general para el control de acceso y autenticación. El esquema de autenticación HTTP más común es la autenticación "Basic". 
+Ver: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication
+
+### Header de Content-Type
+
+Ver: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
+
+Ver: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+-Application: {
+
+`application/json, `
+
+`application/xml,`
+
+`application/zip,`
+
+`application/x-www-form-urlencoded: "para enviar datos de formularios HTML"`
+}
+
+Envío de archivos de audio literalmente
+-Audio: {
+
+`audio/mpeg,`
+
+`audio/x-ms-wma,`
+
+`audio/vnd.rn-realaudio,`
+
+`audio/w-wav`
+}
+
+-Image: {
+
+`image/gif,`
+`image/jpeg,`
+`image/png,`
+`image/x-icon, `
+`image/svg+xml`
+}
+
+Video: {
+
+`video/mpeg,`
+`video/mp4,`
+`video/quicktime,`
+`video/webm`
+}
+
+Multipart: {
+
+`multipart/mixed,`
+`multipart/alternative,`
+`multipart/related,`
+`multipart/form-data:`
+}
+
+Text: {
+
+`text/css,`
+`text/csv,`
+`text/html,`
+`text/plain,`
+`text/xml`
+}
+
+VND: {
+
+`application/vnd.ms-excel,`
+`application/vnd.ms-powerpoint,`
+`application/msword`
+}
+
+**FormData: **
+
+Ver: https://developer.mozilla.org/es/docs/Web/API/FormData
