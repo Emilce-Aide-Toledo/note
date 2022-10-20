@@ -40,3 +40,5 @@ El servidor expone la API REST y el cliente hace uso de ella. El servidor almace
 - Las interacciones son simples.
 - Los recursos de tu hardware son limitados.
 
+Flujo de comunicación entre usuarios, frontend y backend
+![](https://i.ibb.co/7QQSBNN/Response-del-servidor-con-el-HTML-del-home-de-Platzi-2.gif)
