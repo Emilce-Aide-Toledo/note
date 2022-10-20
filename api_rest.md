@@ -58,3 +58,8 @@ Los códigos de estado HTTP se dividen en 5 «tipos», incluyen:
 - **3XX**: Códigos de redireccionamiento devueltos cuando un nuevo recurso ha sido sustituido por el recurso solicitado.
 - **4XX**: Códigos de error del cliente que indican que hubo un problema con la solicitud.
 - **5XX**: Códigos de error del servidor que indican que la solicitud fue aceptada, pero que un error en el servidor impidió que se cumpliera.
+
+#### ¿Qué es una API KEY?
+ ![](https://i.ibb.co/VWV783X/Zo66y0B.png)
+ 
+ 
