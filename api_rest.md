@@ -59,7 +59,22 @@ Los códigos de estado HTTP se dividen en 5 «tipos», incluyen:
 - **4XX**: Códigos de error del cliente que indican que hubo un problema con la solicitud.
 - **5XX**: Códigos de error del servidor que indican que la solicitud fue aceptada, pero que un error en el servidor impidió que se cumpliera.
 
-#### ¿Qué es una API KEY?
+### ¿Qué es una API KEY?
  ![](https://i.ibb.co/VWV783X/Zo66y0B.png)
  
- 
+ ### Qué son los Métodos HTTP
+Un protocolo especifica reglas en la comunicación entre dos entes, en este caso entre dos computadoras. HTTP (Hyper Text Transfer Protocol) fue creado específicamente para la web.
+
+Una de las cosas que especifica el protocolo HTTP son los verbos:
+
+**GET:** solicita dato/ recurso.
+
+**HEAD:**  solicita encabezados HTTP del servidor como si el documento se solicitara mediante el método HTTP GET . La única diferencia entre las solicitudes HTTP HEAD y GET es que para HTTP HEAD, el servidor solo devuelve encabezados sin cuerpo
+
+**POST:**  envia dato/ recurso.
+
+**PUT:** reemplaza por completo un recurso.
+
+**PATCH:** reemplaza parcialmente un recurso.
+
+**DELETE:** elimina un recurso.
