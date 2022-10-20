@@ -80,3 +80,27 @@ console.log(it.next().value);//Ana
 console.log(it.next().value);//Lucia
 console.log(it.next().value);//Juan
 console.log(it.next().value); //undefined
+
+
+//Axios
+// Ver: https://www.npmjs.com/package/axios
+
+const api = axios.create({
+    baseURL: 'https://api.thecatapi.com/v1'
+  });
+  api.defaults.headers.common['X-API-KEY'] = 'c08d415f-dea7-4a38-bb28-7b2188202e46';
+  
+  
+  const saveFavouriteMichi = async(id) => {
+    const { data, status } = await api.post('/favourites', {
+      image_id: id,
+    });
+    console.log('Save')
+
+  if (status !== 200) {
+    spanError.innerHTML = `Hubo un error:  ${status} ${data.message}`;
+  } else {
+    console.log('Guardado en favoritos')
+    //loadFavouriteMichis();
+  }
+}
