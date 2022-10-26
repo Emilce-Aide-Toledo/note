@@ -1,5 +1,5 @@
 ## EL PROCESO CREATIVO.
-
+![](https://static.platzi.com/media/public/uploads/resumen_85711f76-94a1-4b00-ae90-6485be79be62.png)
 #### Los pasos del proceso creativo:
 
 - Preparación: Investigar, recopilar.
@@ -142,6 +142,8 @@ Esta parte es importante en diseño y también en desarrollo, porque en esta eta
 
 También es importante que lo vea el cliente para que se haga una idea de que secciones va a tener su producto.
 En esta etapa no se usan las paletas de colores. Solo es un boceto en blanco y negro o grises.
+Ver: https://github.com/mssroboto/diseno-para-programadores/tree/master/3-wireframes
+
 
 ### Definición de diseño UI
 ---
