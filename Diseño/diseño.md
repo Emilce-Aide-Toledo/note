@@ -1,5 +1,4 @@
 ## EL PROCESO CREATIVO.
-Ver: https://static.platzi.com/media/public/uploads/slidesdisenoparaprogram_80421720-f8bc-4435-9886-a145e6adbb5a.pdf
 
 #### Los pasos del proceso creativo:
 
@@ -321,3 +320,91 @@ Finalmente le añadimos un display grid, que nos permite que toda esta configura
 Para definir el tamaño de un componente, se pone grid-column: 1/5, donde uno es la columna donde empieza, y 5 es la columna donde termina.
 
 Ver: https://chrome.google.com/webstore/detail/css-grid-overlay/hajfilceeneohkmcakehndmaeonhlack?hl=en
+
+### Sistemas de componentes UI
+---
+Una de las metodologías que podemos usar es separar la funcionalidad por componentes.
+
+Un sistema de componentes es un conjunto de componentes que vamos a usar par crear nuestra aplicación. Esos componentes funcionan como una librería.
+
+Puedes usar cualquier tecnología que prefieras. Lo importante es encapsular las funcionalidades en componentes. Cada componente tendrá su propio css y funcionalidad dentro de su propia función.
+
+Así podremos importar esas características a cualquier pantalla de nuestra aplicación, reutilizando el código y haciendo más eficiente nuestra aplicación.
+
+En la clase de Wireframe creamos unos bocetos de unos componentes, que luego dividimos en unidades de funcionalidad.
+La idea es crear a partir del wireframe todos los componentes y funcionalidades, y después le añadimos la capa visual.
+
+
+### Themes y customizaciones
+---
+¿Qué es un themes? Es una capa de color y estilos que se añade por encima de nuestra aplicación y nos permite tener distintas variaciones sin hacer cambios drásticos en nuestro código. En otras palabras, theme es un archivo donde tenemos configurado la presentación visual de toda la aplicación. Teniendo dos o más theme podremos tener dos o más presentaciones visuales.
+
+Para hacer los themes fácilmente podemos hacerlo por medio de variables de css o variables de Sass. Las variables de Sass son más sencillas.
+
+Para tener varios themes, se crean un archivo de css por cada theme, pudiéndose intercambiar una por otra desde una archivo donde se configuran todos los archivos importados, sin tener que cambiar toda la programación de la aplicación. Simplemente con cambiar el nombre de un archivo por otro se realiza el cambio de theme.
+
+### Imágenes para web
+---
+Las imágenes y videos y otros elementos decorativos nos ayudan a reforzar el mensaje que queremos dar en nuestra página.
+
+¿Cómo elegir las imágenes para la web?
+
+Lo primero es tener claro los formatos de imágenes que podemos usar:
+
+-  JPG: indicado para imágenes con degradados. Recomendado sobre PNG pues pesa menos.
+
+- PNG: Indicado para imágenes con fondo transparente.
+
+- SVG: Indicado para iconos y animaciones de baja complejidad. Es vectorial y se puede pasar a código, permitiendo editar sus propiedades con CSS.
+
+- GIF: No recomendado para animaciones largas pues pesa mucho.
+
+
+¿Qué imágenes podemos elegir?
+
+• Que aporten algo al contenido.
+
+• Usa imágenes en la que el publico objetivo se vea reflejado.
+
+• Elige las imágenes que se adecuen a la paleta de colores que seleccionaste.
+
+• Cuidado con las imágenes con licencia.
+
+Otras consideraciones importantes de rendimiento y accesibilidad:
+
+• No exportes imágenes con texto incrustado. No las puede leer el lector de pantallas.
+
+• Poner imágenes del tamaño del contenedor. Cuando tenemos que modificar una imagen para que se adapte al contenedor, esta normalmente se estropea y no se ve correctamente. Y cuando son imágenes muy grandes, se agranda el tiempo de carga innecesariamente.
+
+• Considera el uso del “lazy loading”. Esta estrategia consiste en que las imágenes se van cargando a medida que hacemos scrool, minimizando el tiempo de carga de nuestro sitio.
+
+• Asegúrate de añadir ALT Text a las imágenes que tengan un fin comunicativo.
+
+### Gráficos en movimiento para web
+---
+Formatos de gráficos en movimiento:
+
+• CSS animado: Indicado para animaciones sencillas y transiciones.
+
+• SVG animado: Indicado para animaciones de elementos vectoriales.
+
+• JS (Canvas, WebGL): Indicado para animaciones complejas como animaciones de datos o 3D. Hay librerías en JS que sirven para este tipo de animaciones.
+
+• Videos: Indicado para filmaciones o animaciones de alta complejidad y corta duración. Siempre preguntarnos: ¿realmente necesito este video? Pues son pesados y ralentizan la carga del sitio.
+
+¿Cómo elegir gráficos en movimiento?
+
+• Elegir animaciones que aporten al contenido. No sobrecargar con muchas animaciones.
+
+• Procurar que no se reproduzcan automáticamente y si lo hacen, que no tengan sonido.
+
+• Evita que tus animaciones tengan flashes. Los brillos continuos molestan y pueden ser dañinas.
+
+• Si tus animaciones aportan contenido, añade subtítulos o transcripciones para que las pueda leer el lector de pantalla.
+
+• Evita que las animaciones bloqueen la lectura básica del contenido. Es molesto una animación a la hora de leer, además de que el lector de pantallas no podrá acceder a ese contenido.
+
+• Recuerda que las animaciones y los videos ralentizan la carga de la página. Se aplica nuevamente el menos es más.
+
+
+Ver: https://static.platzi.com/media/public/uploads/slidesdisenoparaprogram_80421720-f8bc-4435-9886-a145e6adbb5a.pdf
