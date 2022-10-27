@@ -115,3 +115,59 @@ Ejemplo usando ::after{target="_blank"}
 ```
 Ver: https://htmlcolorcodes.com/
 
+### Timing functions, planos y ejes
+---
+Una ```timing function``` es la representación de la progresión en función del tiempo de cada ciclo de la animación. Representa la aceleración del elemento desde un punto A hasta un punto B.
+
+En esta página web (https://easings.net/{target="_blank"}) podrás observar varias “timing functions” y cómo es su animación haciendo hover en cada bloque. No es necesario aprendertelas de memoria, solo conocerlas.
+
+**Cubic-bezier**
+
+```Cubic-bezier``` es una función de CSS para representar una timing function mediante cuatro puntos a lo largo de la curva, de los cuales únicamente ingresamos los dos puntos intermedios.
+
+PáVer: https://cubic-bezier.com/#.17,.67,.83,.67
+
+### **Planos y ejes**
+El navegador está constituido de tres planos y ejes: el ancho o X; el alto o Y; y el de profundidad o Z.
+
+El eje X positivo está hacia la derecha; el eje Y positivo está hacia abajo; y el eje Z positivo está hacia el usuario.
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/animationland03.PNG)
+
+**Planos y ejes de un navegador web**
+Estos son muy importantes para mover los elementos del HTML desde un punto inicial hacia un punto final.
+
+**Contexto de apilamiento**
+
+El contexto de apilamiento consiste en la superposición de capas o elementos a lo largo del eje Z. Esto es importante para evitar que un elemento esté ocultando a otro o colocar una imagen de fondo a la página web.
+
+![](https://media1.giphy.com/media/1IvbqeWg7gLlRi2TAC/giphy.gif?cid=790b7611ba7156183cec0ef1ba9e76527d6adfbc2610e94c&rid=giphy.gif&ct=g)
+
+### Transform translate
+---
+```Transform``` es una propiedad CSS que sirve para transformar un elemento HTML mediante funciones. Estas funciones permitirán trasladar, escalar, rotar o torcer a lo largo, ancho y profundidad del elemento.
+
+**Translate para transformaciones**
+
+```Translate``` es una función de la propiedad “transform” que te permite trasladar un elemento HTML a través de los ejes del navegador. El valor que recibe puede ser una longitud (px, rem, etc.) o un porcentaje.
+```css
+selector {
+    transform: translate(20%, -20%);
+}
+```
+Representación de la función translate
+Dependiendo del eje en el que traslades el elemento, existe una función.
+
+Tipo y valor con los argumentos que recibe
+
+Eje X y Y:	```translate(x,y)```
+
+Eje X:	```translateX(x)```
+
+Eje Y:	```translateY(y)```
+
+Eje Z:	```translateZ(z)```
+
+Múltiple	```translate3d(x,y,z)```
+
+Ver: https://caniuse.com/?search=transform
+https://cssgradient.io/gradient-backgrounds/
