@@ -650,3 +650,87 @@ Para solucionar el problema de parpadeo, coloca el elemento que se transformará
 
 Ver: [código](https://codi.link/PGgzPk11ZXZlIGVsIGN1cnNvciBwb3IgZGViYWpvIGRlbCBwdW50bzwvaDM+DQo8ZGl2IGNsYXNzPSJjb250YWluZXIiPg0KICA8ZGl2IGNsYXNzPSJpdGVtIj48L2Rpdj4NCjwvZGl2Pg==%7CLyogRWxlbWVudG8gY29udGVuZWRvciAqLw0KLmNvbnRhaW5lciB7DQogIHdpZHRoOiAxMDBweDsNCiAgaGVpZ2h0OiAxMDBweDsNCiAgYm9yZGVyOiAxcHggZGFzaGVkIGJsYWNrOw0KICBjdXJzb3I6IHBvaW50ZXI7DQoNCn0NCg0KLyogRWxlbWVudG8gYSB0cmFuc2Zvcm1hciAqLw0KLml0ZW0gew0KICB3aWR0aDogMTAwcHg7DQogIGhlaWdodDogMTAwcHg7DQogIGJhY2tncm91bmQtY29sb3I6IHB1cnBsZTsNCiAgb3BhY2l0eTogMC44Ow0KfQ0KDQovKiBUcmlnZ2VyICovIA0KDQouY29udGFpbmVyOmhvdmVyIC5pdGVtIHsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDQ1cHgpOw0KfQ0KDQpoMzo6YmVmb3Jlew0KICBjb250ZW50OiAiIjsNCiAgZGlzcGxheTogYmxvY2s7DQogIHdpZHRoOiAxMHB4Ow0KICBoZWlnaHQ6IDEwcHg7DQogIGJhY2tncm91bmQtY29sb3I6IHJlZDsNCiAgYm9yZGVyLXJhZGl1czogNTAlOw0KICBwb3NpdGlvbjogYWJzb2x1dGU7DQogIHRvcDogNTBweDsNCn0NCg0KDQo=%7C)
 
+## Propiedades recomendadas y no recomendadas para animar
+---
+Al hacer animaciones debemos fijarnos que no sean demasiado costosas computacionalmente para que no parezcan inestables y poco fluidas.
+
+Para ello, debemos comprender un concepto clave llamado: el proceso de renderizado.
+
+Resulta que, como el navegador no entiende el código que hacemos, debe hacer una transformación de ese código para que finalmente pueda ser entendido y visualizado en la pantalla.
+
+Esa transformación se hace en una serie de pasos como los que puedes ver a continuación:
+![](https://static.platzi.com/media/user_upload/browser-rendering%20%281%29-3bf8f82c-dcca-4cd0-b1fd-2f6f1bededea.jpg)
+
+Sin embargo, los pasos que nos interesan en este momento son los últimos 3: Layout, Paint y Composite. Cada uno cumple un papel muy importante, pero no todas las propiedades pasan por estos 3 procesos.
+
+Si una propiedad debe pasar por el paso de Layout, obligatoriamente debe pasar por Paint y Composite también. Si una propiedad debe pasar por el paso de Paint, obligatoriamente debe pasar por Composite también. Pero, si una propiedad debe pasar por el paso de Composite, no debe pasar por ningún otro paso.
+
+Con lo anterior, podemos darnos cuenta de que hay propiedades que requieren un costo mayor que otras al tener que pasar por más pasos. Puedes revisar el proceso de renderizado que realiza cada propiedad en esta página: https://csstriggers.com/. Revisemos algunas de ellas:
+
+- Propiedad height: En cada uno de los motores de renderizado, podemos darnos cuenta por la imagen de abajo que requiere de los pasos de Layout, Paint y Composite, lo cual es bastante costoso.
+
+![](https://static.platzi.com/media/user_upload/height-2570e121-258b-48ce-be1b-8db416697b01.jpg)
+
+- Propiedad background-color: Es una propiedad que no afecta el diseño (Layout) pero requiere una nueva capa de pintura (Paint), lo cual la hace una propiedad también costosa.
+![](https://static.platzi.com/media/user_upload/background-color-e2fa18c3-ffca-4e46-a3b8-ef263a00cdc6.jpg)
+
+- Propiedades transform y opacity: Estas dos propiedades sólo requieren del paso de Composite, lo cual las hace muy baratas de animar. Si necesitas modificar propiedades como width y left (propiedades costosas), puedes reemplazarlas usando la propiedad transform para tratar de lograr el mismo efecto.
+![](https://static.platzi.com/media/user_upload/transform-1167320b-389a-4b40-b335-316cf586a5a9.jpg)
+![](https://static.platzi.com/media/user_upload/opacity-b606d9c1-cef8-4678-bfb5-59edfb81ef59.jpg)
+
+Finalmente, si sabemos por cuáles pasos de renderizado pasa cada una de las propiedades, sabremos con exactitud cuáles propiedades son más costosas y menos recomendadas para animar (como height, width y background-color), como también, cuáles propiedades son menos costosas y más recomendadas para animar (como transform y opacity).
+
+Te comparto esta lectura por si quieres conocer más a profundidad cómo trabaja el motor de cada navegador con cada uno de los pasos que describimos anteriormente: https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/
+
+## Aceleración de hardware y la propiedad will-change
+---
+La aceleración por hardware permite usar componentes específicos de tu ordenador para quitar trabajo al procesador de tu dispositivo. Uno de estos componentes puede ser una tarjeta gráfica, que puede usarse para renderizar o mostrar el contenido del navegador en tu pantalla.
+
+### Propiedades al animar
+En la clase anterior, aprendiste que existen propiedades que se deben animar y otras que no, esto se debe a un proceso de renderizado, este proceso consta de varios pasos: JavaScript, Style, Layout y Composite. Los tres últimos determinan si son adecuados para una animacion, con respecto al rendimiento. Las propiedades recomendables son opacity y transform, porque estas solo necesitan del último paso.
+
+### Problemas de la aceleración por hardware
+- Las imágenes no cargan correctamente.
+- En los vídeos, la imagen o el sonido no se reproduce correctamente.
+- Algunas partes del navegador aparecen mal diseñadas.
+
+### Propiedad will-change
+La propiedad will-change de CSS sirve para anticipar y preparar los cambios de una transformación. Este tipo de optimizaciones puede aumentar la capacidad de respuesta de una página al realizar un trabajo potencialmente costoso en rendimiento.
+
+En el siguiente ejemplo, observa la transición con una propiedad no recomendable y luego agregando la propiedad will-change. ¿Notaste que la transición no es fluida? ¿Qué tanto tiembla el elemento?
+
+[Ejemplo comparativo para usar “will-change”.{target="_blank"}](https://codi.link/PGgyPkNvbG9jYSBlbCBjdXJzb3Igc29icmUgZWwgZWplcmNpY2lvPC9oMj4NCjxkaXYgY2xhc3M9ImNvbnRhaW5lciI+DQogIDxoMz5Qcm9waWVkYWQgdHJhbnNmb3JtIC0gUmVjb21lbmRhYmxlPC9oMz4NCjxkaXYgY2xhc3M9InRyYW5zZm9ybSI+PC9kaXY+DQo8aDM+UHJvcGllZGFkIG1hcmdpbiAtIE5vIHJlY29tZW5kYWJsZTwvaDM+DQo8ZGl2IGNsYXNzPSJtYXJnaW4iPjwvZGl2Pg0KPC9kaXY+%7CLmNvbnRhaW5lcnsNCiAgY3Vyc29yOiBwb2ludGVyOw0KfQ0KDQouY29udGFpbmVyIGRpdiB7DQogIHdpZHRoOiAxMDBweDsNCiAgaGVpZ2h0OiAxMDBweDsNCiAgYmFja2dyb3VuZC1jb2xvcjogcHVycGxlOw0KfQ0KDQoudHJhbnNmb3Jtew0KICAvKiB3aWxsLWNoYW5nZTogdHJhbnNmb3JtOyAqLw0KICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMTBzOw0KfQ0KDQoubWFyZ2luew0KICAvKiB3aWxsLWNoYW5nZTogbWFyZ2luLWxlZnQ7ICovDQogIHRyYW5zaXRpb246IG1hcmdpbiAxMHM7DQp9DQoNCi5jb250YWluZXI6aG92ZXIgLnRyYW5zZm9ybXsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDIwMHB4KTsNCn0NCg0KLmNvbnRhaW5lcjpob3ZlciAubWFyZ2luew0KICBtYXJnaW4tbGVmdDogMjAwcHg7DQp9DQoNCg0KDQo=%7C)
+
+El elemento con la propiedad no recomendable tiembla un poco porque la animación no es fluido y requiere de más recursos, impactando en el rendimiento de la animación.
+
+### Documentación de will-change
+[Documentación de will change - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change)
+
+[will-change Propiedad css para anticipar y preparar los cambios](https://escss.blogspot.com/2014/05/will-change-propiedad-css.html)
+
+### Preferencias de movimiento reducido
+
+Las preferencias de movimiento reducido consisten en que el usuario notifica al sistema que prefiere eliminar o reemplazar las animaciones de la página web.
+
+Si tenemos animaciones que muestran un contenido específico después de un accionador de eventos (voltear la carta, mostrar algo, menús desplegables, etc.), esto provoca que el usuario no pueda verlo.
+
+***Media query “prefers-reduced-motion”***
+La media query prefers-reduced-motion si el usuario tiene alguna opción para eliminar o reemplazar animaciones. Los dos posibles valores que recibe son:
+
+- no-preference: indica que el usuario no tiene preferencias para reducir las animaciones.
+- reduce: indica que el usuario tiene preferencias para reducir las animaciones.
+```css
+@media (prefers-reduced-motion: no-preference) {
+    /* Código de animaciones */
+}
+
+/* Código sin animaciones */
+```
+En esta media query nos permitirá colocar el código que tiene animaciones, y dejar afuera el código sin animaciones como forma de accesibilidad. De esta manera, la página web será más accesible a todo el mundo.
+
+Ver: 
+- [Código 1](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iZnJvbnQiPlNlw7HDoWxhbWU8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iYmFjayI+8J+krzwvZGl2Pg0KPC9kaXY+DQoNCg==%7CaHRtbCwgYm9keXsNCiAgcGFkZGluZzogMDsNCiAgbWFyZ2luOiAwOw0KICBoZWlnaHQ6IDEwMHZoOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIGZvbnQtc2l6ZTogMS41cmVtOw0KfQ0KDQouY29udGFpbmVyew0KICB3aWR0aDogMjAwcHg7DQogIGhlaWdodDogMjAwcHg7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KDQp9DQoNCi5jb250YWluZXIgZGl2ew0KICB3aWR0aDogMTAwJTsNCiAgaGVpZ2h0OiAxMDAlOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIHBvc2l0aW9uOiBhYnNvbHV0ZTsNCn0NCg0KLmZyb250ew0KICBiYWNrZ3JvdW5kLWNvbG9yOiBhcXVhOw0KfQ0KDQouYmFja3sNCiAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTsNCiAgb3BhY2l0eTogMDsNCn0NCg0KDQoNCi5jb250YWluZXI6aG92ZXIgLmJhY2t7DQogIC8qIFByb3BpZWFkYWQgYWdyZWdhZGEgKi8NCiAgb3BhY2l0eTogMTsNCn0NCg0KQG1lZGlhIChwcmVmZXJzLXJlZHVjZWQtbW90aW9uOiBuby1wcmVmZXJlbmNlKSB7DQoNCg0KLmNvbnRhaW5lcnsNCiAgdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDsNCiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzOw0KDQp9DQoNCi5jb250YWluZXIgZGl2ew0KICBiYWNrZmFjZS12aXNpYmlsaXR5OiBoaWRkZW47DQp9DQoNCg0KLmJhY2t7DQogIHRyYW5zZm9ybTogcm90YXRlWSgxODBkZWcpOw0KICBvcGFjaXR5OiAxOw0KDQp9DQoNCi5jb250YWluZXI6aG92ZXJ7DQogIHRyYW5zZm9ybTogcm90YXRlWSgxODBkZWcpOw0KfQ0KDQoNCn0NCg0KDQo=%7C)
+
+- [Código 2](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iZnJvbnQiPlNlw7HDoWxhbWU8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iYmFjayI+8J+krzwvZGl2Pg0KPC9kaXY+DQoNCg==%7CaHRtbCwgYm9keXsNCiAgcGFkZGluZzogMDsNCiAgbWFyZ2luOiAwOw0KICBoZWlnaHQ6IDEwMHZoOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIGZvbnQtc2l6ZTogMS41cmVtOw0KfQ0KDQouY29udGFpbmVyew0KICB3aWR0aDogMjAwcHg7DQogIGhlaWdodDogMjAwcHg7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KDQp9DQoNCi5jb250YWluZXIgZGl2ew0KICB3aWR0aDogMTAwJTsNCiAgaGVpZ2h0OiAxMDAlOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIHBvc2l0aW9uOiBhYnNvbHV0ZTsNCn0NCg0KLmZyb250ew0KICBiYWNrZ3JvdW5kLWNvbG9yOiBhcXVhOw0KfQ0KDQouYmFja3sNCiAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTsNCiAgLyogUHJvcGllYWRhZCBhZ3JlZ2FkYSAqLw0KICBvcGFjaXR5OiAwOw0KfQ0KDQoNCg0KLmNvbnRhaW5lcjpob3ZlciAuYmFja3sNCiAgLyogUHJvcGllYWRhZCBhZ3JlZ2FkYSAqLw0KICBvcGFjaXR5OiAxOw0KfQ0KDQoNCg0K%7C)
+
+- [Código 3](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iZnJvbnQiPlNlw7HDoWxhbWU8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iYmFjayI+8J+krzwvZGl2Pg0KPC9kaXY+DQoNCg==%7CaHRtbCwgYm9keXsNCiAgcGFkZGluZzogMDsNCiAgbWFyZ2luOiAwOw0KICBoZWlnaHQ6IDEwMHZoOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIGZvbnQtc2l6ZTogMS41cmVtOw0KfQ0KDQouY29udGFpbmVyew0KICB3aWR0aDogMjAwcHg7DQogIGhlaWdodDogMjAwcHg7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KICB0cmFuc2Zvcm0tc3R5bGU6IHByZXNlcnZlLTNkOw0KICB0cmFuc2l0aW9uOiBhbGwgMnM7DQoNCn0NCg0KLmNvbnRhaW5lciBkaXZ7DQogIHdpZHRoOiAxMDAlOw0KICBoZWlnaHQ6IDEwMCU7DQogIGRpc3BsYXk6IGdyaWQ7DQogIHBsYWNlLWNvbnRlbnQ6IGNlbnRlcjsNCiAgcG9zaXRpb246IGFic29sdXRlOw0KICBiYWNrZmFjZS12aXNpYmlsaXR5OiBoaWRkZW47DQp9DQoNCi5mcm9udHsNCiAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTsNCn0NCg0KLmJhY2t7DQogIGJhY2tncm91bmQtY29sb3I6IGdyZXk7DQogIHRyYW5zZm9ybTogcm90YXRlWSgxODBkZWcpOw0KfQ0KDQouY29udGFpbmVyOmhvdmVyew0KICB0cmFuc2Zvcm06IHJvdGF0ZVkoMTgwZGVnKTsNCn0NCg0KDQo=%7C)
