@@ -170,4 +170,106 @@ Eje Z:	```translateZ(z)```
 Múltiple	```translate3d(x,y,z)```
 
 Ver: https://caniuse.com/?search=transform
+
 https://cssgradient.io/gradient-backgrounds/
+
+### Transform rotate, scale, skew y matrix
+---
+Además de translate, existen otras funciones que permiten transformar el elemento HTML para iniciar una animación.
+![](https://media0.giphy.com/media/KRRSOKFINjskbRNENr/giphy.gif?cid=790b7611ee396f136b7b48c308d54e717611117f428e9871&rid=giphy.gif&ct=g)
+
+**Rotate para transformaciones**
+
+Rotate es una función de la propiedad ```transform``` que te permite rotar un elemento HTML a través de los ejes del navegador. El valor que recibe es un ángulo, por ejemplo, “45deg” (45 grados) o “2rad” (2 radianes). Los ángulos positivos están en sentido horario, y los negativos en sentido antihorario.
+```CSS
+selector {
+    transform: rotate(45deg);
+}
+```
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/animationland05.PNG)
+
+Dependiendo del eje en el que rotes el elemento, existe una función.
+
+Tipo y valor con los argumentos que recibe
+
+Eje X y Y:	```rotate(angle)```
+
+Eje X:	```rotateX(angle)```
+
+Eje Y:	```rotateY(angle)```
+
+Eje Z:	```rotateZ(angle)```
+
+Múltiple:	```rotate3d(x,y,z,angle)```
+
+**Scale para transformaciones**
+Scale es una función de la propiedad transform que te permite escalar un elemento HTML a través de sus ejes. El valor que recibe es un número multiplicador al elemento original.
+
+Si el elemento es igual a 1 entonces sigue como el original; mayor a 1 aumenta de tamaño; y, menor a 1 disminuye de tamaño.
+```CSS
+selector {
+    transform: scale(0.8);
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/animationland06.PNG)
+
+Dependiendo del eje en el que escales el elemento, existe una función
+
+Tipo y valor con los argumentos que recibe
+
+Eje X y Y:	```scale(x)```
+
+Eje X:	```scaleX(x)```
+
+Eje Y:	```scaleY(y)```
+
+Eje Z:	```scaleZ(z)```
+
+Múltiple:	```scale3d(x,y,z)```
+
+**Skew para transformaciones**
+
+Skew es una función de la propiedad transform que te permite torcer un elemento HTML a través de sus ejes en dos dimensiones. El valor que recibe es un ángulo para cada eje en el que el elemento se distorsionará.
+
+```css
+selector {
+    transform: skew(45deg, 45deg);
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/animationland07.PNG)
+
+Dependiendo del eje en el que tuerzas el elemento, existe una función.
+
+Tipo y valor con los argumentos que recibe
+
+Eje X y Y:	```skew(angleX, angleY)```
+
+Eje X:	```skewX(angle)```
+
+Eje Y:	```skewY(angle)```
+
+**Matrix para transformaciones**
+
+Matrix es una función de la propiedad transform que te permite realizar varios efectos en uno solo.
+
+Ver: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
+
+**Orden en el código para transformaciones**
+
+Solamente puede existir una sola propiedad transform en el código de CSS, por lo que si escribimos otra regla CSS con otra transformación, esta se sobreescribirá y solo ejecutará la última. Por ende, utiliza varias funciones en la misma propiedad transform para realizar varias transformaciones.
+```css
+*Mal (solo rotará el elemento)*/
+
+selector {
+    transform: translate(100px,  100px);
+    transform: rotate(45deg);
+ }
+```
+``` css
+/*Bien (realizará ambas transformaciones)*/
+
+selector {
+    transform: translate(100px, 100px) rotate(45deg);
+}
+```
