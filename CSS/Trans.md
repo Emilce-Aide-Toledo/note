@@ -501,3 +501,152 @@ La posición sirve para posicionar cada carta como deseemos.
 }
 ```
 ¡Y listo! Ya está construido el efecto parallax.
+
+Ver: [código](https://codi.link/PGRpdiBjbGFzcz0icGFyYWxsYXgtY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iaW1hZ2UgaW1hZ2VfYmFja2dyb3VuZCI+DQogICAgPGltZyBzcmM9Imh0dHBzOi8vaS5pYmIuY28vamJMS2d2WC9CYWNrZ3JvdW5kLnBuZyIgYWx0PSJiYWNrZ3JvdW5kIj4NCiAgPC9kaXY+DQogIDxkaXYgY2xhc3M9ImltYWdlIGltYWdlX21pZGRsZSI+DQogICAgPGRpdiBjbGFzcz0iY2FyZCBvbmUiPjwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9ImNhcmQgdHdvIj48L2Rpdj4NCiAgICA8ZGl2IGNsYXNzPSJjYXJkIHRocmVlIj48L2Rpdj4NCiAgPC9kaXY+DQogIDxkaXYgY2xhc3M9ImltYWdlIGltYWdlX2ZvcmVncm91bmQiPg0KICAgIDxpbWcgc3JjPSJodHRwczovL2kuaWJiLmNvL3ZKZGJSa2ovQWxpY2UucG5nIiBhbHQ9IkFsaWNlIj4NCiAgPC9kaXY+DQo8L2Rpdj4NCg0K%7CYm9keSB7DQogIG1hcmdpbjogMDsNCn0NCg0KaW1new0KICBtYXgtd2lkdGg6IDEwMCU7DQogIGhlaWdodDogYXV0bzsNCn0NCg0KLnBhcmFsbGF4LWNvbnRhaW5lciB7DQogIHdpZHRoOiAxMDAlOw0KICBoZWlnaHQ6IDEwMHZoOw0KICBwZXJzcGVjdGl2ZTogOHB4Ow0KICBvdmVyZmxvdy14OiBoaWRkZW47DQogIG92ZXJmbG93LXk6IHNjcm9sbDsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KfQ0KDQouaW1hZ2V7DQogIHBvc2l0aW9uOiBhYnNvbHV0ZTsNCn0gDQoNCg0KLmltYWdlX2JhY2tncm91bmR7DQogIHdpZHRoOiAxMDAlOw0KICBoZWlnaHQ6IGF1dG87DQogIHRyYW5zZm9ybTogdHJhbnNsYXRlWigwcHgpIHNjYWxlKDEpOw0KICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDUwJTsNCn0NCg0KLmltYWdlX21pZGRsZXsNCiAgd2lkdGg6IDEwMCU7DQogIGhlaWdodDogMTAwJTsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVaKDVweCkgc2NhbGUoMC4zNzUpOw0KICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCU7DQp9DQoNCi5pbWFnZV9mb3JlZ3JvdW5kew0KICB3aWR0aDogMTAwJTsNCiAgaGVpZ2h0OiBhdXRvOw0KICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVooMnB4KSBzY2FsZSgwLjc1KTsNCiAgdHJhbnNmb3JtLW9yaWdpbjogdG9wOw0KfQ0KDQouY2FyZCB7DQogIGJhY2tncm91bmQ6IHdoaXRlOw0KICBib3JkZXItcmFkaXVzOiA4cHg7DQogIHdpZHRoOiA4MHB4Ow0KICBoZWlnaHQ6IDEwMHB4Ow0KICBwb3NpdGlvbjogYWJzb2x1dGU7DQogIHRyYW5zZm9ybTogcm90YXRlKC0yMGRlZyk7DQp9DQoNCi8qIEFncmVnYSB0dXMgcHJvcGlvcyB2YWxvcmVzICovDQoNCi5vbmV7DQogIGxlZnQ6IDMwJTsNCn0NCg0KLnR3b3sNCiAgcmlnaHQ6IDIwJTsNCiAgdG9wOiAyMDBweDsNCg0KfQ0KDQoudGhyZWV7DQogIHJpZ2h0OiAyMCU7DQogIGJvdHRvbTogLTcwMHB4Ow0KfQ0KDQogDQo=%7C)
+
+## Transition
+---
+Ver: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+
+## Transition property y duration
+
+La propiedad ```transition``` de CSS sirve para agregar un intervalo de tiempo a un elemento HTML para visualizar los cambios de una transformación.
+
+![](https://media.giphy.com/media/gCSOFQybTbM3pome6c/giphy.gif)
+
+```css
+transition: [property] [duration] [timing-function] [delay];
+```
+- ```transition-property``` (obligatoria)
+- ```transition-duration``` (obligatoria)
+- ```transition-timing-function``` (opcional)
+- ```transition-delay``` (opcional)
+
+### Propiedades obligatorias para una transición
+
+- ```transition-property```: esta propiedad sirve para especificar el elemento HTML de la transición. Si la transición es para todos los elementos, su valor es ```all```.
+
+
+- ```transition-duration```: esta propiedad sirve para agregar un intervalo de tiempo en segundos o milisegundos (1s = 1000ms).
+```css
+selector {
+    transition: transform 100ms;
+    transition: all 2s;
+}
+```
+Ver: [código](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iYm94IGJveDEiPlRyYW5zbGF0ZTwvZGl2Pg0KICA8ZGl2IGNsYXNzPSJib3ggYm94MiI+Um90YXRlPC9kaXY+DQogIDxkaXYgY2xhc3M9ImJveCBib3gzIj5Ta2V3PC9kaXY+DQo8L2Rpdj4=%7CYm9keXsNCiAgbWFyZ2luOiAwOw0KICBwYWRkaW5nOiAwOw0KICBib3gtc2l6aW5nOiBib3JkZXItYm94Ow0KICBmb250LWZhbWlseTogc2Fucy1zZXJpZiwgJ0NvdXJpZXIgTmV3JywgQ291cmllciwgbW9ub3NwYWNlOw0KICBmb250LXdlaWdodDogYm9sZDsNCn0NCg0KLmNvbnRhaW5lciB7DQogIHdpZHRoOiAxMDB2dzsNCiAgaGVpZ2h0OiAxMDB2aDsNCiAgZGlzcGxheTogZmxleDsNCiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7DQogIGp1c3RpZnktaXRlbXM6IGNlbnRlcjsNCiAgYWxpZ24taXRlbXM6IGNlbnRlcjsNCn0NCg0KLmJveCB7DQogIHdpZHRoOiAxMDBweDsNCiAgaGVpZ2h0OiAxMDBweDsNCiAgY3Vyc29yOiBwb2ludGVyOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQp9DQoNCi8qIFRyYW5zaWNpb25lcyAqLw0KDQouYm94MSB7DQogIGJhY2tncm91bmQ6IExpZ2h0Q29yYWw7DQp9DQoNCi5ib3gyIHsNCiAgYmFja2dyb3VuZDogU2FsbW9uOw0KfQ0KDQouYm94MyB7DQogIGJhY2tncm91bmQ6IERhcmtTYWxtb247DQp9DQoNCi8qIFRyYW5zZm9ybWFjaW9uZXMgKi8NCg0KLmJveDE6aG92ZXIgew0KICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtMjVweCk7DQp9DQoNCi5ib3gyOmhvdmVyIHsNCiAgdHJhbnNmb3JtOiByb3RhdGUoNDVkZWcpOw0KfQ0KDQouYm94Mzpob3ZlciB7DQogIHRyYW5zZm9ybTogc2tldygyNWRlZywyNWRlZyk7DQp9%7C)
+
+
+## Transition timing function y delay
+
+Una *timing function* es la representación de la progresión en función del tiempo de cada ciclo de una animación. Representa la aceleración del elemento desde un punto A hasta un punto B.
+
+- ```linear```: El elemento se mueve a una aceleración constante.
+- ```ease```: Es el valor predeterminado si no se especifica. El elemento acelera inicialmente, pero presenta mucha desaceleración.
+- ```ease-in```: El elemento empieza lento pero termina rápido.
+- ```ease-out```: El elemento empieza rápido pero termina lento.
+- ```ease-in-out```: Es la combinación de ```ease-in``` y ```ease-out```. El elemento empieza lento, a medida que avanza va acelerándose, pero termina lento.
+- ```cubic-bezier```: Se necesitan cuatro números, que representan dos puntos de control para formar la curva de aceleración deseada.
+
+
+### Propiedades opcionales para una transición
+- ```transition-timing-function```: propiedad que establece una timing function para especificar una forma de aceleración de la transición.
+
+- ```transition-delay```: propiedad que establece un intervalo de tiempo desde la acción que desencadena la animación hasta su inicio.
+
+Ver: [código](https://codi.link/PGgzPkVzcGVyYSAxIHNlZ3VuZG88L2gzPg0KPGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIG9uZSI+bGluZWFyPC9kaXY+DQogIDxkaXYgY2xhc3M9ImNpcmNsZSB0d28iPmVhc2U8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIHRocmVlIj5lYXNlLWluPC9kaXY+DQogIDxkaXYgY2xhc3M9ImNpcmNsZSBmb3VyIj5lYXNlLW91dDwvZGl2Pg0KICA8ZGl2IGNsYXNzPSJjaXJjbGUgZml2ZSI+ZWFzZS1pbi1vdXQ8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIHNpeCI+Y3ViaWMtYmV6aWVyPC9kaXY+DQo8L2Rpdj4=%7CLmNvbnRhaW5lciB7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWYsICdDb3VyaWVyIE5ldycsIENvdXJpZXIsIG1vbm9zcGFjZTsNCiAgZm9udC13ZWlnaHQ6IGJvbGQ7DQogIHRleHQtYWxpZ246IGNlbnRlcjsNCn0NCg0KLmNvbnRhaW5lcjpob3ZlciAuY2lyY2xlIHsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDIwMHB4KTsNCn0NCi5jaXJjbGUgew0KICB3aWR0aDogNzVweDsNCiAgaGVpZ2h0OiA3NXB4Ow0KICBib3JkZXItcmFkaXVzOiA1MCU7DQogIGRpc3BsYXk6IGdyaWQ7DQogIHBsYWNlLWNvbnRlbnQ6IGNlbnRlcjsNCiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzOw0KICB0cmFuc2l0aW9uLWRlbGF5OiAxczsNCn0NCg0KLm9uZSB7DQogIGJhY2tncm91bmQ6cmdiKDE1MCwgNjgsIDE1MCk7DQogIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBsaW5lYXI7DQp9DQoNCi50d28gew0KICBiYWNrZ3JvdW5kOiBPcmNoaWQ7DQogIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBlYXNlOw0KfQ0KDQoudGhyZWUgew0KICBiYWNrZ3JvdW5kOiBWaW9sZXQ7DQogIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBlYXNlLWluOw0KfQ0KDQouZm91ciB7DQogIGJhY2tncm91bmQ6IFBsdW07DQogIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBlYXNlLW91dDsNCn0NCg0KLmZpdmUgew0KICBiYWNrZ3JvdW5kOiBUaGlzdGxlOw0KICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogZWFzZS1pbi1vdXQ7DQp9DQoNCi5zaXggew0KICBiYWNrZ3JvdW5kOiBMYXZlbmRlcjsNCiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGN1YmljLWJlemllciguNTEsLjcyLC45MSwuMjYpOw0KfQ==%7C)
+
+Ver: [código 2](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIG9uZSI+bGluZWFyPC9kaXY+DQogIDxkaXYgY2xhc3M9ImNpcmNsZSB0d28iPmVhc2U8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIHRocmVlIj5lYXNlLWluPC9kaXY+DQogIDxkaXYgY2xhc3M9ImNpcmNsZSBmb3VyIj5lYXNlLW91dDwvZGl2Pg0KICA8ZGl2IGNsYXNzPSJjaXJjbGUgZml2ZSI+ZWFzZS1pbi1vdXQ8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iY2lyY2xlIHNpeCI+Y3ViaWMtYmV6aWVyPC9kaXY+DQo8L2Rpdj4=%7CLmNvbnRhaW5lciB7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWYsICdDb3VyaWVyIE5ldycsIENvdXJpZXIsIG1vbm9zcGFjZTsNCiAgZm9udC13ZWlnaHQ6IGJvbGQ7DQogIHRleHQtYWxpZ246IGNlbnRlcjsNCn0NCg0KLmNvbnRhaW5lcjpob3ZlciAuY2lyY2xlIHsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDIwMHB4KTsNCn0NCi5jaXJjbGUgew0KICB3aWR0aDogNzVweDsNCiAgaGVpZ2h0OiA3NXB4Ow0KICBib3JkZXItcmFkaXVzOiA1MCU7DQogIGRpc3BsYXk6IGdyaWQ7DQogIHBsYWNlLWNvbnRlbnQ6IGNlbnRlcjsNCiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzOw0KfQ0KDQoub25lIHsNCiAgYmFja2dyb3VuZDpyZ2IoMTUwLCA2OCwgMTUwKTsNCiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGxpbmVhcjsNCn0NCg0KLnR3byB7DQogIGJhY2tncm91bmQ6IE9yY2hpZDsNCiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGVhc2U7DQp9DQoNCi50aHJlZSB7DQogIGJhY2tncm91bmQ6IFZpb2xldDsNCiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGVhc2UtaW47DQp9DQoNCi5mb3VyIHsNCiAgYmFja2dyb3VuZDogUGx1bTsNCiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGVhc2Utb3V0Ow0KfQ0KDQouZml2ZSB7DQogIGJhY2tncm91bmQ6IFRoaXN0bGU7DQogIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBlYXNlLWluLW91dDsNCn0NCg0KLnNpeCB7DQogIGJhY2tncm91bmQ6IExhdmVuZGVyOw0KICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKC41MSwuNzIsLjkxLC4yNik7DQp9%7C)
+
+Ver: [código 3](https://codepen.io/paolojoaquin/pen/WNpEoWP)
+
+## Movimiento impulsado por la acción
+---
+Los tips de UX son recomendaciones para que tus animaciones sean mejores para la experiencia de usuario. Estudiaremos tres, los cuales son:
+
+- Movimiento impulsado por la acción.
+- Tiempos de espera.
+- Problemas de parpadeo.
+
+**Movimiento impulsado por la acción**
+
+Al momento de crear una transición, el tiempo del punto A al punto B es el mismo. El movimiento impulsado por la acción consiste en modificar los tiempos de la transición, para que el tiempo de regreso (de B a A) sea mayor, para que la animación repose y no exista un movimiento abrupto.
+
+Esto se consigue añadiendo la transición en el accionador de la animación y en el elemento, pero con diferentes tiempos. Ten en cuenta que la animación primero sucede con el evento.
+```css
+/* De A a B */
+selector:hover {
+    transition: transform 1s;
+}
+```
+```css
+/* De B a A */
+selector {
+    transition: transform 1.5s;
+}
+```
+Ver: [código](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGg0Pk3DoXMgbGVudG8gYWwgcmVncmVzbzwvaDQ+DQogIDxkaXYgY2xhc3M9ImNpcmNsZSBvbmUiPjwvZGl2Pg0KICA8aDQ+TcOhcyByw6FwaWRvIGFsIHJlZ3Jlc288L2g0Pg0KDQogIDxkaXYgY2xhc3M9ImNpcmNsZSB0d28iPjwvZGl2Pg0KICANCjwvZGl2Pg==%7CLmNvbnRhaW5lciB7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWYsICdDb3VyaWVyIE5ldycsIENvdXJpZXIsIG1vbm9zcGFjZTsNCiAgZm9udC13ZWlnaHQ6IGJvbGQ7DQogIHRleHQtYWxpZ246IGNlbnRlcjsNCn0NCg0KLmNpcmNsZSB7DQogIHdpZHRoOiA3NXB4Ow0KICBoZWlnaHQ6IDc1cHg7DQogIGJvcmRlci1yYWRpdXM6IDUwJTsNCn0NCg0KLmNvbnRhaW5lcjpob3ZlciAuY2lyY2xlIHsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDIwMHB4KTsNCiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzIGxpbmVhcjsNCn0NCg0KLm9uZSB7DQogIGJhY2tncm91bmQ6cmdiKDE1MCwgNjgsIDE1MCk7DQogIHRyYW5zaXRpb246IHRyYW5zZm9ybSAxLjVzIGxpbmVhcjsNCn0NCg0KLnR3byB7DQogIGJhY2tncm91bmQ6IE9yY2hpZDsNCiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuNXMgbGluZWFyOw0KfQ0K%7C)
+
+## Tiempos de espera
+---
+En algunos menús desplegables, intentas seleccionar una opción pero se cierra el menú y debes hacer el mismo hasta seleccionar lo que deseas.
+
+Los tiempos de espera solucionan este problema, se refiere a usar una duración entre el usuario deje de seleccionar el elemento y se cierre el menú. Usar tiempos de espera ayuda al usuario a no frustrarse con los menús.
+
+Utiliza la propiedad ```transition-delay``` para que los elementos esperen un tiempo determinado entre que el usuario deje de seleccionar el menú hasta que se cierre completamente.
+
+Ver: [codigo](https://codi.link/PHVsIGNsYXNzPSJuYXYiPg0KICA8bGk+PGEgaHJlZj0iIyI+TXVqZXI8L2E+DQogICAgPHVsPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPkNhbWlzZXRhczwvYT48L2xpPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPlBhbnRhbG9uZXM8L2E+PC9saT4NCiAgICAgIDxsaT48YSBocmVmPSIjIj5TaG9ydHM8L2E+DQogICAgICAgIDx1bD4NCiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Q29ydG9zPC9hPjwvbGk+DQogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkxhcmdvczwvYT48L2xpPg0KICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5UcmFuc3BhcmVudGVzPC9hPjwvbGk+DQogICAgICAgIDwvdWw+DQogICAgICA8L2xpPg0KICAgIDwvdWw+DQogIDwvbGk+DQogIDxsaT48YSBocmVmPSIjIj5Ib21icmU8L2E+DQogICAgPHVsPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPkNhbWlzZXRhczwvYT48L2xpPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPlBhbnRhbG9uZXM8L2E+PC9saT4NCiAgICAgIDxsaT48YSBocmVmPSIjIj5TaG9ydHM8L2E+DQogICAgICAgIDx1bD4NCiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Q29ydG9zPC9hPjwvbGk+DQogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkxhcmdvczwvYT48L2xpPg0KICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5UcmFuc3BhcmVudGVzPC9hPjwvbGk+DQogICAgICAgIDwvdWw+DQogICAgICA8L2xpPg0KICAgIDwvdWw+DQogIDwvbGk+DQogIDxsaT48YSBocmVmPSIjIj5OacOxb3M8L2E+DQogICAgPHVsPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPkNhbWlzZXRhczwvYT48L2xpPg0KICAgICAgPGxpPjxhIGhyZWY9IiMiPlBhbnRhbG9uZXM8L2E+PC9saT4NCiAgICAgIDxsaT48YSBocmVmPSIjIj5TaG9ydHM8L2E+DQogICAgICAgIDx1bD4NCiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Q29ydG9zPC9hPjwvbGk+DQogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkxhcmdvczwvYT48L2xpPg0KICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5UcmFuc3BhcmVudGVzPC9hPjwvbGk+DQogICAgICAgIDwvdWw+DQogICAgICA8L2xpPg0KICAgIDwvdWw+DQogIDwvbGk+DQo8L3VsPg==%7CYm9keSB7DQogIG1hcmdpbjogMDsNCn0NCg0KdWwgew0KICBsaXN0LXN0eWxlOiBub25lOw0KfQ0KDQpsaSB7DQogIG1hcmdpbjogMXJlbSAwOw0KfQ0KDQphIHsNCiAgdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KfQ0KDQoubmF2IHsNCiAgd2lkdGg6IDkwdnc7DQogIGRpc3BsYXk6IGZsZXg7DQogIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kOw0KfQ0KDQoubmF2IGxpIHVsIHsNCiAgZGlzcGxheTogYmxvY2s7DQogIG9wYWNpdHk6IDA7DQogIHBvc2l0aW9uOiBhYnNvbHV0ZTsNCiAgdHJhbnNpdGlvbjogb3BhY2l0eSA0MDBtczsNCiAgdHJhbnNpdGlvbi1kZWxheTogMzAwbXM7DQp9DQoNCi5uYXYgbGk6aG92ZXIgPiB1bCB7DQogIG9wYWNpdHk6IDE7DQogIHRyYW5zaXRpb246IG9wYWNpdHkgNDAwbXM7DQogIHRyYW5zaXRpb24tZGVsYXk6IDMwMG1zOw0KfQ0KDQoubmF2IGxpIHVsIGxpIHsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KfQ0KDQoubmF2IGxpIHVsIGxpIHsNCiAgcmlnaHQ6IDMwcHg7DQp9DQoNCg0K%7C)
+
+Ver: [códico 2](https://codepen.io/camilo315853/pen/NWpyLwo?editors=0100)
+
+El ejemplo no es perfecto, usa tus conocimientos de CSS para crear tu propio menú desplegable con tiempos de espera. ¡Comparte tu trabajo en la sección de aportes!
+
+## Problemas de parpadeo
+---
+El problema del parpadeo sucede cuando un accionador no se encuentra en el lugar donde debería por la transformación. Por ejemplo, al realizar una animación pasa lo siguiente:
+
+- Al mover el cursor sobre un elemento se traslada hacia la izquierda.
+- Al trasladarse, deja de estar el cursor sobre el elemento, por lo que vuelve a su posición inicial.
+- Al estar en su posición inicial, el cursor está sobre el elemento, entonces accionará nuevamente la transformación.
+
+Ver: [código](https://codi.link/PGgzPk11ZXZlIGVsIGN1cnNvciBwb3IgZGViYWpvIGRlbCBwdW50bzwvaDM+DQo8ZGl2PjwvZGl2Pg==%7CZGl2IHsNCiAgd2lkdGg6IDEwMHB4Ow0KICBoZWlnaHQ6IDEwMHB4Ow0KICBiYWNrZ3JvdW5kLWNvbG9yOiBwdXJwbGU7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgb3BhY2l0eTogMC44Ow0KDQp9DQoNCmRpdjpob3ZlciB7DQogIHRyYW5zZm9ybTogdHJhbnNsYXRlWCg0NXB4KTsNCn0NCg0KaDM6OmJlZm9yZXsNCiAgY29udGVudDogIiI7DQogIGRpc3BsYXk6IGJsb2NrOw0KICB3aWR0aDogMTBweDsNCiAgaGVpZ2h0OiAxMHB4Ow0KICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7DQogIGJvcmRlci1yYWRpdXM6IDUwJTsNCiAgcG9zaXRpb246IGFic29sdXRlOw0KICB0b3A6IDUwcHg7DQp9DQoNCg0K%7C)
+
+La animación entró en un ciclo que se observará como un parpadeo, porque las transiciones entre hover y no hover son rápidas.
+```css
+/* Mal */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+div:hover {
+  transform: translateX(45px);
+}
+```
+### ¿Cómo solucionar este problema?
+
+Para solucionar el problema de parpadeo, coloca el elemento que se transformará dentro de un contenedor. Después, utiliza el elemento contenedor como el accionador de la transformación del elemento. De esta manera, siempre se estará haciendo hover en el sitio adecuado sin importar que el elemento cambie.
+```css
+/* Bien */
+/* Elemento contenedor */
+.container {
+  width: 100px;
+  height: 100px;
+}
+
+/* Elemento a transformar */
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+/* Trigger */ 
+.container:hover .item {
+  transform: translateX(45px);
+}
+```
+
+Ver: [código](https://codi.link/PGgzPk11ZXZlIGVsIGN1cnNvciBwb3IgZGViYWpvIGRlbCBwdW50bzwvaDM+DQo8ZGl2IGNsYXNzPSJjb250YWluZXIiPg0KICA8ZGl2IGNsYXNzPSJpdGVtIj48L2Rpdj4NCjwvZGl2Pg==%7CLyogRWxlbWVudG8gY29udGVuZWRvciAqLw0KLmNvbnRhaW5lciB7DQogIHdpZHRoOiAxMDBweDsNCiAgaGVpZ2h0OiAxMDBweDsNCiAgYm9yZGVyOiAxcHggZGFzaGVkIGJsYWNrOw0KICBjdXJzb3I6IHBvaW50ZXI7DQoNCn0NCg0KLyogRWxlbWVudG8gYSB0cmFuc2Zvcm1hciAqLw0KLml0ZW0gew0KICB3aWR0aDogMTAwcHg7DQogIGhlaWdodDogMTAwcHg7DQogIGJhY2tncm91bmQtY29sb3I6IHB1cnBsZTsNCiAgb3BhY2l0eTogMC44Ow0KfQ0KDQovKiBUcmlnZ2VyICovIA0KDQouY29udGFpbmVyOmhvdmVyIC5pdGVtIHsNCiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDQ1cHgpOw0KfQ0KDQpoMzo6YmVmb3Jlew0KICBjb250ZW50OiAiIjsNCiAgZGlzcGxheTogYmxvY2s7DQogIHdpZHRoOiAxMHB4Ow0KICBoZWlnaHQ6IDEwcHg7DQogIGJhY2tncm91bmQtY29sb3I6IHJlZDsNCiAgYm9yZGVyLXJhZGl1czogNTAlOw0KICBwb3NpdGlvbjogYWJzb2x1dGU7DQogIHRvcDogNTBweDsNCn0NCg0KDQo=%7C)
+
