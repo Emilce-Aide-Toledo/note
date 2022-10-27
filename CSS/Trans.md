@@ -368,3 +368,136 @@ Ahora sigamos los siguientes pasos:
 Y listo, tienes el efecto de voltear una tarjeta mediante la propiedad ```backface-visibility```.
 
 Ver: [código](https://codi.link/PGRpdiBjbGFzcz0iY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iZnJvbnQiPlNlw7HDoWxhbWU8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iYmFjayI+8J+krzwvZGl2Pg0KPC9kaXY+DQoNCg==%7CaHRtbCwgYm9keXsNCiAgcGFkZGluZzogMDsNCiAgbWFyZ2luOiAwOw0KICBoZWlnaHQ6IDEwMHZoOw0KICBkaXNwbGF5OiBncmlkOw0KICBwbGFjZS1jb250ZW50OiBjZW50ZXI7DQogIGZvbnQtc2l6ZTogMS41cmVtOw0KfQ0KDQouY29udGFpbmVyew0KICB3aWR0aDogMjAwcHg7DQogIGhlaWdodDogMjAwcHg7DQogIGN1cnNvcjogcG9pbnRlcjsNCiAgcG9zaXRpb246IHJlbGF0aXZlOw0KICAvKiBUcmFuc2Zvcm1hY2nDs24gM0QgKi8NCiAgdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDsNCn0NCg0KLmNvbnRhaW5lciBkaXZ7DQogIHdpZHRoOiAxMDAlOw0KICBoZWlnaHQ6IDEwMCU7DQogIGRpc3BsYXk6IGdyaWQ7DQogIHBsYWNlLWNvbnRlbnQ6IGNlbnRlcjsNCiAgcG9zaXRpb246IGFic29sdXRlOw0KIC8qIMKhUHJ1ZWJhIGNvbiBsbyBxdWUgcXVpZXJhcyEhICovDQogIGJhY2tmYWNlLXZpc2liaWxpdHk6IGhpZGRlbjsNCg0KfQ0KDQouZnJvbnR7DQogIGJhY2tncm91bmQtY29sb3I6IGFxdWE7DQp9DQoNCi5iYWNrew0KICBiYWNrZ3JvdW5kLWNvbG9yOiBncmV5Ow0KICAvKiBUcmFuc2Zvcm1hY2nDs24gMkQgKi8NCiAgdHJhbnNmb3JtOiByb3RhdGVZKDE4MGRlZyk7DQp9DQoNCi5jb250YWluZXI6aG92ZXJ7DQogIHRyYW5zZm9ybTogcm90YXRlWSgxODBkZWcpOw0KDQogIC8qIFNpIHF1aWVyZXMsIGHDsWFkZSBsYSBzaWd1aWVudGUgbMOtbmVhIGRlIGPDs2RpZ28sIHNvbG8gcGFyYSBxdWUgb2JzZXJ2ZXMgZWwgY29tcG9ydGFtaWVudG8gKi8NCiAgLyogdHJhbnNpdGlvbjogYWxsIDJzOyAqLw0KDQp9DQoNCg0K%7C)
+
+
+## Efecto parallax: estructura HTML
+---
+El efecto de paralaje o parallax es una técnica en la que el fondo se mueve a una velocidad distinta que la del contenido. El resultado es un ligero efecto de profundidad, dejando ver partes que antes no podías visualizar. Te ayuda a sumergirte totalmente en el contenido, similar al efecto 3D.
+
+Ver: https://www.awwwards.com/30-webs-con-efecto-parallax.html
+
+### Estructura HTML para el efecto parallax
+
+Crea un contenedor con elementos hijos, estos serán las capas del contenedor para crear el efecto. En este caso, agrega tres elementos que representen la capa del fondo (background), del medio (middle) y de primer plano (foreground). Cada elemento debe tener una clase general y una que las diferencie.
+```html
+<div class="parallax-container">
+  <div class="image image_background"></div>
+  <div class="image image_middle"></div>
+  <div class="image image_foreground"></div>
+</div>
+```
+En la capa del medio, crea tres elementos hijos que representen tres cartas.
+```html
+<div class="image image_middle">
+    <div class="card one"></div>
+    <div class="card two"></div>
+    <div class="card three"></div>
+</div>
+```
+Para las demás capas, agrega una imagen de fondo y una en primer plano de Alicia. Te dejo los enlaces de las imagenes, utiliza una etiqueta de imagen con su respectivo atributo alt.
+```
+ *[Alicia](https://i.ibb.co/vJdbRkj/Alice.png)
+*[Imagen de fondo](https://i.ibb.co/jbLKgvX/Background.png)
+```
+
+Y listo, ya tienes la estructura del efecto parallax, no importa si las imágenes están sobredimensionadas. Ahora utilizaremos CSS para dar estilos a las capas.
+
+Ver: [código](https://codi.link/PGRpdiBjbGFzcz0icGFyYWxsYXgtY29udGFpbmVyIj4NCiAgPGRpdiBjbGFzcz0iaW1hZ2UgaW1hZ2VfYmFja2dyb3VuZCI+DQogICAgPGltZyBzcmM9Imh0dHBzOi8vaS5pYmIuY28vamJMS2d2WC9CYWNrZ3JvdW5kLnBuZyIgYWx0PSJiYWNrZ3JvdW5kIj4NCiAgPC9kaXY+DQogIDxkaXYgY2xhc3M9ImltYWdlIGltYWdlX21pZGRsZSI+DQogICAgPGRpdiBjbGFzcz0iY2FyZCBvbmUiPjwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9ImNhcmQgdHdvIj48L2Rpdj4NCiAgICA8ZGl2IGNsYXNzPSJjYXJkIHRocmVlIj48L2Rpdj4NCiAgPC9kaXY+DQogIDxkaXYgY2xhc3M9ImltYWdlIGltYWdlX2ZvcmVncm91bmQiPg0KICAgIDxpbWcgc3JjPSJodHRwczovL2kuaWJiLmNvL3ZKZGJSa2ovQWxpY2UucG5nIiBhbHQ9IkFsaWNlIj4NCiAgPC9kaXY+DQo8L2Rpdj4NCg0K%7C%7C)
+
+## Efecto parallax: estilos CSS
+---
+Quitar el margin que está por defecto establecido por el navegador.
+```css
+body {
+  margin: 0;
+}
+```
+Dimensionar las imágenes para que ocupen el espacio del contenedor.
+```css
+img{
+  max-width: 100%;
+  height: auto;
+}
+```
+En el elemento contenedor (parallax-container) agrega:
+
+- Medidas para que ocupe el ancho y alto de la pantalla.
+- Perspectiva de 8 píxeles (recuerda este valor).
+- Posición relativa para que las capas puedan posicionarse con respecto al contenedor del efecto.
+- En este caso, el exceso de contenido deberá estar oculto para el eje X y desplazable para el eje Y, pero lo puedes cambiar a tu gusto.
+```css
+.parallax-container {
+  width: 100%;
+  height: 100vh;
+  perspective: 8px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+```
+Agrega la posición absoluta a todos los elementos hijos o capas del efecto.
+```css
+.image{
+  position: absolute;
+} 
+```
+Para las cada capa del efecto vamos a realizar lo siguiente:
+
+- Medidas según sean necesarias.
+- Trasladar la capa en eje Z, desde 0 hasta el valor de la perspectiva (8px).
+- Escalar el elemento según su profundidad. Para calcular este valor utiliza la siguiente fórmula: $(perspective - translateZ) / perspective$, por ejemplo para la capa del medio, $(8-5)/8 = 0.375$.
+- Modificar el origen según sea necesario.
+
+Algunos valores no son necesarios colocar, pero es recomendable tener un control del código y de las propiedades CSS.
+```css
+.image_background{
+  width: 100%;
+  height: auto;
+  transform: translateZ(0px) scale(1);
+  transform-origin: 0 50%;
+}
+
+.image_middle{
+  width: 100%;
+  height: 100%;
+  transform: translateZ(5px) scale(0.375);
+  transform-origin: 50%;
+}
+
+.image_foreground{
+  width: 100%;
+  height: auto;
+  transform: translateZ(2px) scale(0.75);
+  transform-origin: top;
+}
+```
+Para las cartas de la segunda capa agrega dos estilos importantes: las medidas y la posición absoluta.
+```css
+.card {
+  width: 80px;
+  height: 100px;
+  position: absolute;
+  /* Estilos propios de la carta */
+  background: white;
+  border-radius: 8px;
+  transform: rotate(-20deg);
+}
+La posición sirve para posicionar cada carta como deseemos.
+
+/* Valores al azar, modificálos a tu gusto. */
+.one{
+  left: 30%;
+}
+
+.two{
+  right: 20%;
+  top: 200px;
+
+}
+
+.three{
+  right: 20%;
+  bottom: -700px;
+}
+```
+¡Y listo! Ya está construido el efecto parallax.
