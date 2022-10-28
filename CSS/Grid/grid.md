@@ -10,7 +10,7 @@ Podemos crear, por ejemplo, un layout simple con el header, main y footer ya que
 
 Ver: https://css-tricks.com/snippets/css/complete-guide-grid/
 
-***Qué es contenedor***
+## ***Qué es contenedor***
 Es el elemento que se va a convertir en una grilla. Algo como una caja en la que vamos agregando elementos.
 
 ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28268%29.png)
@@ -39,3 +39,100 @@ Es un grupo de celdas, que solo puede estar en una fila o en una misma columna.
 Es un grupo de celdas, estas pueden usar varias filas o varias columnas a la vez.
 
 ![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28273%29.png)
+
+## Propiedades del contenedor
+---
+***Qué es el display grid***
+
+Define el elemento como contenedor de cuadrícula y establece un nuevo contexto de formato de cuadrícula para su contenido.
+```html
+<div class="contenedor">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+```
+El div principal o “contenedor” va a ser el padre de nuestra grilla. Los seis div internos serán los elementos o grid items.
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+}
+
+.item {
+    border: 5px solid #00bcd4;
+    font-size: 4rem;
+}
+```
+En nuestra hoja de estilos agregamos un color de fondo y un borde al contenedor principal, mientras que un borde y un tamaño de fuente a los elementos del contenedor.
+
+Al renderizar el código en el navegador obtendríamos este resultado:
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28274%29.png)
+
+Los elementos se posicionan uno debajo de otro y funciona como un solo bloque, ya que por defecto el navegador asigna un contenedor como block. Sólo con el hecho de agregar la propiedad display: grid al código de nuestro contenedor principal, el navegador ya lo interpreta como tal, a pesar de no cambiar visualmente. Vamos a generar algunas columnas.
+
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: 100px 200px 300px ;
+}
+```
+### ***```Grid-template-columns``` y ```grid-template-rows```***
+
+Define las columnas y filas de la cuadrícula con una lista de valores separados por espacios. Los valores representan el tamaño de la pista y el espacio entre ellos representa la línea de la cuadrícula.
+
+```grid-template-columns``` nos permite especificar el número de columnas y su ancho. En este caso usamos tres tamaños, cada uno 100px mayor al anterior. Vemos en el navegador que al llegar a la tercera columna, los elementos se mueven a la siguiente fila.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28275%29.png)
+
+```grid-template-rows``` nos permite especificar el número de filas y su ancho. En este caso usamos dos tamaños, el primero de 150px y el segundo de 250px.
+
+```css
+grid-template-rows: 150px 250px;
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28276%29.png)
+
+```grid-auto-``` Nos permite definir una altura a todas las columnas y filas. Es decir, si agregáramos otra columna o fila también tendría esta dimensión.
+
+```css
+grid-auto-rows: 150px;
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28277%29.png)
+
+## ***```Grid-auto-flow```***
+
+Nos permite cambiar el orden en el que están los grid items, este valor por defecto es row (fila), pero lo podemos cambiar.
+
+```grid-auto-flow``` nos permite modificar cómo se está llenando la grilla. Cuando los elementos no entran en la cantidad de filas definidas, crea nuevas.  ```grid-auto-flow```: column crea nuevas columnas.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28278%29.png)
+Como observamos, todos los elementos se han alineado en una sola fila, esto es porque no hemos definido en el código la cantidad de filas que queremos. Vamos a establecer que las filas solo tengan dos dimensiones, mientras que todas las columnas tendrán 100px. De esta manera:
+```css
+grid-template-rows: 100px 200px;
+grid-auto-columns: 100px;
+grid-auto-flow: column;
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28279%29.png)
+
+Vemos en el navegador que incluso el orden en que se organizan los elementos cambia. Todas las columnas tienen un mismo ancho. Puedes usar estas propiedades para jugar según lo que busques.
+
+## ***Qué son gaps***
+Es un espacio entre filas y columnas.
+
+row-gap nos permite definir el tamaño de la brecha entre filas. Por supuesto, también lo puedes hacer en las columnas con column-gap. En este caso usamos***😗**
+```css
+row-gap: 15px;
+column-gap: 30px;
+```
+Ojo: los espacios solo se crean entre filas o columnas, no con los extremos del contenedor.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28280%29.png)
+
+gap, por otro lado nos permite crear un espaciado tanto para filas y columnas. Por ejemplo: gap: 40px crea el mismo espaciado entre sí, tanto en filas como en columnas.
+
