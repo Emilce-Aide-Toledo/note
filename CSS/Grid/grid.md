@@ -136,3 +136,212 @@ Ojo: los espacios solo se crean entre filas o columnas, no con los extremos del 
 
 gap, por otro lado nos permite crear un espaciado tanto para filas y columnas. Por ejemplo: gap: 40px crea el mismo espaciado entre sí, tanto en filas como en columnas.
 
+## Propiedades de alineación
+---
+## *Cómo funcionan las propiedades de alineación*
+Vamos al editor de texto. Creamos un contenedor con lo que hemos aprendido. Usaremos este contenedor para ejemplificar cómo funcionan las propiedades de alineación.
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 150px 150px 150px;
+    grid-auto-rows: 150px;
+    grid-auto-flow: column;
+    height: 600px;
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28282%29.png)
+
+***Propiedades de alineación de los ítems***
+
+- Justify-items:
+
+Todos los que empiezan con justify nos ayudan a ordenar los elementos de manera horizontal en el espacio. justify-items: center nos da:
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28283%29.png)
+
+- Align-items:
+
+Todos los que empiezan con align nos ayudan a alinear los elementos de manera vertical en el espacio. align-items: center nos da:
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28284%29.png)
+
+- Place-items:
+
+Es la mezcla de justify-items y align-items. place-items: center nos da:
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28285%29.png)
+
+***Propiedades de alineación del contenedor:***
+
+Estas propiedades son las que ajustan la grilla completa al espacio en la que ella vive. No tiene que ver nada con los elementos. La grilla funciona como un bloque.
+
+**Justify-content: *justify-content:**
+
+center nos da este resultado:
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28286%29.png)
+
+**Align-content: *align-content:**
+
+center nos da este resultado:
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28287%29.png)
+
+**Place-content: place*-content:**
+
+center nos da este resultado:
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28288%29.png)
+
+Además de estas propiedades de alineación, tenemos otras que dan directamente propiedades a los hijo de la grilla o grid items. Es decir, podemos alinear los elementos dentro de los contenedores de manera independiente. Estas son:
+
+- Justify-self
+- Align-self
+- Place-self
+
+
+## Propiedades de ubicación
+---
+Imaginemos que tenemos una grilla de 4x4 con sólo dos elementos. Podemos moverlos para que ocupen más espacio que una celda, o estén en una celda distinta a la que deberían estar.
+
+Para las columnas, las propiedades que nos van a ayudar son:
+
+- grid-column-start: con esta propiedad nosotros vamos a decirle al elemento en que línea de columna debe comenzar.
+
+- grid-column-end: con esta propiedad nosotros vamos a decirle al elemento hasta que línea de la columna va a llegar.
+
+- grid-column: es una mezcla de grid-column-start y grid-column-end. Los valores que necesita son el valor inicial y el valor final, estos van separados de un “/” (diagonal).
+
+Para las filas las propiedades son iguales, solo que vamos a trabajar en las filas:
+
+- grid-row-start
+- grid-row-end
+- grid-row
+
+Además de estas propiedades, tenemos:
+
+- grid-area: con esta propiedad declaramos solo una vez donde va a comenzar tanto en columna como en fila y donde va a terminar tanto en columna como en fila.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28290%29.png)
+
+### **Cómo agregar las propiedades de ubicación**
+
+Vamos al editor de texto para comprender mejor estos conceptos. Primero creamos un contenedor con tres elementos a los que les agregamos clases para poder aplicar estilos individuales a cada uno.
+
+```html
+    <div class="contenedor">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+    </div>
+```
+
+En nuestro archivo CSS llamamos al contenedor con su clase y le aplicamos propiedades similares a las que hemos trabajado anteriormente.
+
+
+Ajustamos el ancho de fuente en 4rem para todas las clases.
+
+Le damos un borde y color de fondo distinto a cada elemento del contenedor para poder diferenciarlo.
+
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px;
+    place-content: center;
+}
+.item {
+    font-size: 4rem;
+}
+.item-1 {
+    border: 5px solid #f8bbd0;
+    background-color: #ffeeff;
+}
+.item-2 {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+}
+.item-3 {
+    border: 5px solid #b2ebf2;
+    background-color: #e5ffff;
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28292%29.png)
+
+**Item 1**
+
+Ahora, editemos el primer elemento para que ocupe todo el ancho de la primera fila. Debe empezar a numerar los elementos de izquierda a derecha.
+
+Mucho ojo, el número no es la columna en sí, sino la línea en que termina la columna. Entonces si queremos que ocupe hasta la tercera celda, tendremos que colocar grid-column-end: 4.
+
+```css
+.item-1 {
+    border: 5px solid #f8bbd0;
+    background-color: #ffeeff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+```
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28297%29.png)
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28298%29.png)
+
+**Item 2**
+
+En este caso queremos que ocupe la primera celda de las filas 2 y 3 dentro de la primera columna. Como la primera fila ya está ocupada, debemos empezar de la fila 2 y terminar en la 4.
+
+```css
+grid-row: 2/4
+```
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28299%29.png)
+
+**Item 3**
+
+El tercer item ocupa tanto filas como columnas, por lo que conviene usar grid-area. El orden en que debemos colocar el valor es: fila y columna en que empieza, fila y columna en que termina.
+```css
+.item-3 {
+    border: 5px solid #b2ebf2;
+    background-color: #e5ffff;
+    grid-area: 2/2/4/4;
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28300%29.png)
+
+## **¿Existen atajos para usar las propiedades?**
+Podemos usar grid-template-areas para acomodar todos los elementos con mucha más rapidez. grid-template-areas declaramos areas dentro de la grilla.
+
+Para ello, agregamos la información a la tabla como si fuera dentro de una grilla, de esta manera:
+
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px;
+    grid-template-areas: 
+        "header header header"
+        "side main main"
+        "side main main";
+    place-content: center;
+}
+```
+
+Luego, colocamos el nombre de la celda creada anteriormente a cada item.
+
+```css
+}
+.item-1 {
+    border: 5px solid #f8bbd0;
+    background-color: #ffeeff;
+    grid-area: header;
+}
+.item-2 {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    grid-area: side;
+}
+
+```
