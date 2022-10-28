@@ -102,3 +102,19 @@ La propiedad overflow: hidden; sirve para ocultar cualqueir elemento hijo que se
 ---
 [Propiedades físicas y lógicas en CSS](https://www.canva.com/design/DAEPwadrvmg/ldmhPG0L9qzRRhjTaYO9KQ/view?utm_content=DAEPwadrvmg&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+## Técnicas de alineamiento con Flexbox
+---
+[Técnicas de alineamiento con Flexbox](https://www.canva.com/design/DAEPwlhbCcE/TI_WagM_hIe6RoURIJOJeA/view?utm_content=DAEPwlhbCcE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton#1)
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+## Para Dibujar
+---
+https://a.singlediv.com/
+
+https://dev.to/raulmar/no-tengas-miedo-a-dibujar-con-css-1ck
+
+https://www.youtube.com/watch?v=Y0_FMCji3iE&ab_channel=dotconferences
+
+https://www.youtube.com/channel/UCSRhwaM00ay0fasnsw6EXKA
+
