@@ -118,3 +118,12 @@ https://www.youtube.com/watch?v=Y0_FMCji3iE&ab_channel=dotconferences
 
 https://www.youtube.com/channel/UCSRhwaM00ay0fasnsw6EXKA
 
+## Grid y las relaciones padre e hijos inmediatos 
+---
+[Grid y las relaciones padre e hijos](https://www.canva.com/design/DAEW0j7Iqqk/4wH6BM4jurjRl9rba-spuQ/view?utm_content=DAEW0j7Iqqk&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+### Lines, tracks, cell, area, gutters, grid axis, grid row, grid column
+--- 
+[Ver](https://www.canva.com/design/DAEW0pSs00Q/MnL5x4rrSaC7U5F_-1fWQQ/view?utm_content=DAEW0pSs00Q&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+
