@@ -351,3 +351,195 @@ Luego, colocamos el nombre de la celda creada anteriormente a cada item.
 }
 
 ```
+## Funciones especiales en CSS grid
+---
+Primero creamos un contenedor principal con otros 9 contenedores dentro:
+```html
+    <div class="contenedor">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        <div class="item item-7">7</div>
+        <div class="item item-8">8</div>
+        <div class="item item-9">9</div>
+    </div>
+```
+Luego, añadimos los estilos generales que hemos trabajado anteriormente.
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: 30px 200px 60px;
+    grid-template-rows: 100px 100px 100px;
+}
+.item {
+    border: 5px solid #00bcd4;
+    font-size: 2rem;
+}
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28306%29.png)
+
+## Funciones minmax y repeat
+
+Uno de los detalles a solucionar es que al reducir el ancho de la pantalla, el tamaño de las celdas no cambia, porque es absoluto. Si agregáramos más texto a la celda, esta se rompería de todas maneras porque no hemos cambiado el tamaño.
+
+**Minmax:**
+
+Nos ayuda a declarar un tamaño mínimo y máximo para el ancho o alto de una celda. Podemos modificar el tamaño del contenedor sin importar el tamaño del contenido.
+
+Entonces cambiamos los valores establecidos en las columnas; la primera en un ancho mínimo de 30px y un máximo de 300px, y la tercera con un mínimo de 60px y un máximo de 250px.
+```css
+grid-template-columns: minmax(30px, 300px) 200px minmax(60px, 250px);
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28307%29.png)
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28308%29.png)
+
+Como notamos, las celdas se adaptan al ancho del contenido, pero al redimensionarlas mucho más pequeñas, se desborda por el alto.
+
+**Repeat:**
+
+Imaginemos que queremos una grilla con 12 columnas del mismo ancho. No vamos a escribir 12 veces el valor del ancho, sino una vez usando repeat.
+
+Entonces, para que la celda se adapte al tamaño del contenido sin importar la dimensión, definimos la cantidad de celdas en que queremos aplicar la acción (tres) y damos la propiedad de auto. Si colocáramos un valor en pixeles realmente no solucionaríamos el problema.
+```css
+grid-template-rows: repeat(3, auto);
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28309%29.png)
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28310%29.png)
+
+
+Notamos que ahora las celdas inicialmente son menos altas debido que sólo ocupan el espacio que ocupa el contenido. Y al dimensionarlas los contenedores no se rompen.
+
+## Keywords especiales
+---
+CSS tiene varias palabras claves que suelen resultar muy útiles al momento de crear código. Veamos algunas de ellas:
+
+Palabras clave especiales para creación de código
+- fr : es una unidad relativamente nueva de medida especial de CSS Grid para darle ancho o alto a filas y columnas. 1fr representa una fracción del total de columnas o filas.
+
+- min-content : ajusta el ancho de la celda lo mínimo posible sin romper su contenido.
+
+- max-content : ajusta el ancho de la celda lo máximo posible para mostrar su contenido.
+
+- auto-fill : logra que la grilla ocupe el 100% del espacio que tiene. Agrega columnas “fantasma” que rellenan el espacio sobrante del contenedor.
+
+- auto-fit : ensancha las columnas para que ocupen todo el espacio del contenedor.
+
+- auto-fill y auto-fit: ayudan a la grilla a ocupar el 100% del espacio disponible.
+
+## Cómo funcionan las palabras clave especiales
+
+Veamos cómo funcionan estas keywords directamente en el código:
+
+Primero, creamos un index.html con cuatro contenedores. Llevando el 3 y 4 distintas mezclas y espaciados.
+
+```html
+<div class="contenedor">
+<div class="item item-1">1</div>
+<div class="item item-2">2</div>
+<div class="item item-3">3 3 33 3 3 3 3 3 3 3 3 3 3 33333 3333 333</div>
+<div class="item item-4">444 4 4 4 4 4 4 4 4 4444 4444 44 4 4 4 4</div>
+</div>
+```
+
+Luego aplicamos en los estilos:
+
+Cuatro columnas de 100px sin especificar su alto.
+```css
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+  }
+  
+.item {
+    border: 5px solid #00bcd4;
+    font-size: 2rem;
+  }
+```
+En el navegador observamos que todas las columnas tienen el mismo ancho.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28334%29.png)
+
+
+Piensa en las columnas como fracciones: si la grilla tiene 4 columnas, todas del mismo ancho, cada columna es igual a una fracción de la grilla.
+Entonces, si en vez de colocar 100px de ancho, colocamos 1fr, logramos que cada columna siempre tenga el mismo ancho, ocupando siempre el 100% del ancho de la pantalla.
+
+```css
+grid-template-columns: repeat(4, 1fr);
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28343%29.png)
+
+También podemos agregar distintos valores proporcionales al ancho de la columa. Por ejemplo, podemos hacer que una columna sea del doble de ancho de la anterior, y así con las demás.
+
+```css
+grid-template-columns: 1fr 3fr 1fr 2fr;
+```
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28344%29.png)
+
+Podemos cambiar una sola columna para que use el ancho mínimo que ocupa su contenido con min-content. De esta manera, al redimensionar la pantalla, el ancho de las demás columnas cambiará, pero el de la modificada no, porque ya ocupa el ancho mínimo desde el principio.
+
+```css
+grid-template-columns: 1fr 3fr min-content 2fr;
+```
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28345%29.png)
+
+Lo mismo pasa si queremos que la celda use el ancho máximo. Tomará el espacio necesario para mostrar su contenido en una sola línea.
+
+```css
+grid-template-columns: 1fr 3fr max-content 2fr;
+```
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28346%29.png)
+
+Para explicar el auto-fill y auto-fit, creemos otro contenedor.
+
+```html
+    <div class="contenedor-1">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+    </div>
+    <div class="contenedor-2">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+    </div>
+```
+
+Aplicamos estilos:
+
+```css
+.contenedor-1 {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .contenedor-2 {
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    margin-top: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  } 
+``` 
+
+Para que funcione, es necesario especificar el ancho mínimo y máximo del contenedor. En este caso queremos que comience desde 100px y crezca hasta llegar a una fracción de la grilla. No colocamos valores absolutos para que el contenedor siempre se ajuste al ancho de la pantalla.
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28347%29.png)
+
+![](https://cdn.document360.io/da52b302-22aa-4a71-9908-ba18e68ffee7/Images/Documentation/image%28348%29.png)
+
+Como vemos en la grilla con auto-fit las columnas se expanden hasta ocupar todo el ancho. Mientras que en auto-fill se agregan columnas fantasma para rellenar el espacio faltante. Sin embargo, al reducir el tamaño vuelven a ocupar el mismo espacio mínimo.
