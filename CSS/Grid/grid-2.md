@@ -126,4 +126,68 @@ https://www.youtube.com/channel/UCSRhwaM00ay0fasnsw6EXKA
 --- 
 [Ver](https://www.canva.com/design/DAEW0pSs00Q/MnL5x4rrSaC7U5F_-1fWQQ/view?utm_content=DAEW0pSs00Q&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+### Fase de creatividad e identificación de elementos
+---
+https://www.canva.com/design/DAEPfFLZaPQ/KCwKnf-IVl5Rinrh1eGSCA/view?utm_content=DAEPfFLZaPQ&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton#22
+
+https://www.freepik.es/
+
+https://www.canva.com/design/DAEQWdX-R6U/UNyZt4I2GoerlNT43617rA/watch?utm_content=DAEQWdX-R6U&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton
+
+https://pixabay.com/es/
+
+https://www.materialpalette.com/
+
+## Creando contenedor: ¿display: grid o display: inline-grid?
+---
+[Importante](https://www.canva.com/design/DAEPfFLZaPQ/KCwKnf-IVl5Rinrh1eGSCA/view?utm_content=DAEPfFLZaPQ#20)
+
+![](https://static.platzi.com/media/user_upload/diferencias-402df9ab-1921-48f4-a658-b9ea021ce7bb.jpg)
+
+**Display** ⇒ Desplegar, colocar a la vista, exhibir, lucir, Mostar, presentar
+
+**Outer** ⇒ Denota cómo se comporta un elemento en relación a los otros
+
+**Inner** ⇒ como se comportan los hijos directos del elemento
+
+<h4>Apuntes</h4>
+-  Display ⇒ Define el tipo de visualización de un elemento
+Valores:
+
+- -  Inner
+
+- - Outer
+
+-Los valores block e inline definen dos cosas
+-  - Valor externo (Outer)
+-   - Valor interno (Inner)
+
+-Cuando usamos display: grid; estamos diciendo display: block grid;
+
+-   - Es decir que su comportamiento externo sera de tipo bloque
+
+- Un elemento que tenga los atributos de bloque puede tener:
+-  - Margin y padding
+-  - width
+-  - height
+
+-Si pensamos en display: inline-flex; su relación con otros elementos no sera de bloque sino de línea
+
+-Siempre volvemos al flujo normal del documento
+
+
+RESUMEN: La diferencia entre grid e inline-grid es el comportamiento externo que tienen con otros elementos, usando grid sera de tipo bloque y usando inline-grid sera de tipo inline.
+
+## Creando filas, columnas y espaciado
+---
+[Ver](https://www.canva.com/design/DAEPfCLFLTM/wthWMlp0-8TWRlSbb_hhlg/watch?utm_content=DAEPfCLFLTM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+## Alineamiento en el elemento contenedor 
+---
+[Ver](https://www.canva.com/design/DAEPfzybVv4/CpeBRCEEO0stZ8Ivj1Ovfg/view?utm_content=DAEPfzybVv4&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+## Funciones: repeat(), minmax() y fit-content()
+---
+[Ver](https://www.canva.com/design/DAEPgUjpekM/vSqGiNbCVGEsz-X1Wu2uxw/view?utm_content=DAEPgUjpekM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
 
