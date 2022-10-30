@@ -251,3 +251,68 @@ Las imágenes representan una pieza fundamental al momento de mostrar contenido 
 - JPG / JPEG (Photographic Experts Group): Formato de imagen con pérdida, perdemos calidad a la hora de comprimirlas, pero llegan a ser óptimas para la carga en la página web.
 - SVG - Vector (Scalable Vector Graphics): Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad, ya que está compuesta por vectores.
 - WebP: Es un formato gráfico en forma de contenedor que sustenta tanto compresión con pérdida como sin ella. ​​Fue desarrollado por Google.
+
+***Tamaño máximo recomendado para una imágen:***
+
+- 70kb
+
+***Herramientas para optimizar imágenes:***
+
+[Tiny PNG:](https://tinypng.com/) Comprime el tamaño de una imagen, para hacerla más ligera.
+
+[Verefix:](https://www.verexif.com/) Elimina los metadatos de una imagen, para reducir su tamaño.
+
+## Etiqueta img
+---
+El elemento HTML ```<img>``` incrusta una imagen dentro de un documento. A continuación, veremos cómo funciona.
+
+La etiqueta ```<img>``` va siempre dentro del contenedor ```<body>```, pues es un elemento visible.
+
+***Funcionamiento de la etiqueta alt:***
+---
+```html
+<img src=“ubicación de la imagen” alt=“descripción de la imagen”>
+```
+Con esta misma estructura, podemos utilizar el siguiente ejemplo de un estudiante cansado:
+```html
+<img src=“https://www.ipp.edu.pe/blog/wp-content/uploads/2020/05/shutterstock_1489158410.jpg” alt=“estudiante cansado”>
+```
+Al añadir el código que acabamos de crear a un documento, la imagen que se mostrará en el navegador es la siguiente:
+
+***Atributos de la etiqueta img***
+---
+
+La etiqueta img cuenta con dos atributos, el atributo “src” y el segundo atributo es “alt”. Ambos son importantes.
+
+El atributo de “src” es para mostrar en dónde se encuentra la imagen que vamos a incrustar. Las imágenes se pueden obtener de alguna carpeta o una URL que obtengamos de internet.
+
+En caso de que el nombre de tu imagen lleve algún espacio, deberás sustituir ese espacio con un guion o guion medio. Caso contrario, el navegador no podrá reconocer la ubicación.
+
+alt sirve para agregar una descripción a nuestra imagen. Esto es útil por cuestiones de SEO y también para accesibilidad (por ejemplo para personas con visión reducida).
+
+```<img/>```, a diferencia de la gran mayoría de las demás etiquetas de HMTL, no necesita una etiqueta de cierre.
+
+## Etiqueta figure
+---
+
+*Figure* es una etiqueta que permite almacenar una imagen en su interior. Es una mejor práctica comparada con usar solamente un contenedor div. Como complemento al contenedor *figure*, se utiliza la etiqueta *figcaption*, que permite darle una pequeña descripción a la imagen, como el autor, fuente o algo por el estilo, que se mostrará usualmente abajo de la imagen.
+
+*Figcaption* se diferencia del atributo *Alt* porque esta última muestra su descripción en texto en el navegador solamente al pasar el mouse por encima de la imagen (de ahí su utilidad para personas con discapacidad visual).
+
+Es importante considerar que la etiqueta figure no es únicamente para imágenes:
+
+- El elemento HTML
+
+Representa contenido independiente, a menudo con un título. Por lo general, se trata de una imagen, una ilustración, un diagrama, un fragmento de código, o un esquema al que se hace referencia en el texto principal, pero que se puede mover a otra página o a un apéndice sin que afecte al flujo principal.
+
+## Etiqueta video
+---
+La etiqueta ```<video>```, tiene algunos atributos como:
+
+```controls``` :  agrega al video los controles necesarios para reproducir, pausar y adelantar.
+
+```preload``` = auto: hace que el navegador descargue el video, en el momento en el que se acceda a la página.
+
+La etiqueta ```<source>```, se puede colocar dentro de una etiqueta ```<video>``` varias veces, para especificar diferentes rutas. Esto para asegurar que cualquier navegador pueda mostrar el video.
+
+![](https://i.ibb.co/VwtXD5z/video.png)
