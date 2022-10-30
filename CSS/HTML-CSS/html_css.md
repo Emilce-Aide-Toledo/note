@@ -168,3 +168,86 @@ HTML son siglas que corresponden a Hyper Text Markup Language (Lenguaje de Marca
 
 HTML es un lenguaje interpretado. Además, HTML es un estándar, así que no importa desde quénavegador o dispositivo se ejecute, el código sigue siendo el mismo en cualquier sitio.
 
+## body
+---
+body es la etiqueta que identifica la parte visible de nuestro sitio web. Dentro del body, se añadirán las etiquetas para marcar los elementos visuales del sitio web, como logotipo, menús de navegación, contenido principal, entre otrs. Es muy importante usar HTML semántico y no llenar todo de <div> para que nuestro sitio sea mejor interpretado por el navegador y, por lo tanto, más accesible.
+
+**Etiquetas del cuerpo del documento (body):**
+
+- ***article:*** diferencia partes del contenido que pueden vivir por sí mismas.
+
+- ***nav:*** para hacer menús de navegación.
+
+- ***aside:*** contenido menos relevante, como publicidad, etc.
+
+- ***section:*** sirve para diferenciar las secciones principales del contenido.
+
+- ***header:*** cabecera del documento.
+
+- ***footer:*** pie de página del documento.
+
+- ***h1 - h6:*** títulos de nuestro sitio web.
+
+- ***table:*** tablas de contenidos, similar a la estructura de las hojas de calculo.
+
+- ***ul y ol:*** listas de items.
+
+- ***div:*** cualquier división para organizar el contenido.
+
+- ***h1 a h6:*** son etiquetas para indicar títulos con un estilo que destaca del resto.
+
+- ***article:*** es la parte de nuestro contenido que puede vivir por sí mismo. Pueden haber tantos artícle como proyectos o eventos tenga nuestro portafolio.
+
+- ***p:*** define el texto de un párrafo.
+
+- ***small:*** aplica una apariencia de texto reducido en tamaño.
+
+- ***strong:*** aplica al texto un formato de negritas.
+
+- ***a:*** corresponde a un ancla o enlace a una url interna o externa del documento.
+
+- ***img:*** con esta etiqueta podemos enlazar imágenes en el documento.
+
+- ***figure:*** le da un contexto semántico a las imágenes.
+
+## Anatomía de una etiqueta de HTML
+---
+Una etiqueta HTML puede tener tantos atributos como desees, y cada atributo tiene su propia función. En el siguiente ejemplo, veremos la forma en la que se compone una etiqueta HTML:
+
+![](https://i.postimg.cc/k4s9SqbT/Anatom-a-de-Etiqueta.png)
+
+- No todas las etiquetas llevan una etiqueta de cierre. Las que llevan un cierre son aquellas que albergan un contenido que nos dice a dónde nos va a llevar (nombre de la página, nombre del link).
+
+- Lo que va dentro de la etiqueta de apertura es un atributo (nombre del atributo = href y el valor del atributo es la url).
+
+- El contenido + la etiqueta = Elemento
+
+## Tipos de imágenes
+---
+Las imágenes representan una pieza fundamental al momento de mostrar contenido para web. Aquí conoceremos los principales tipos de imágenes web y sus formatos.
+
+**Tipos de imágenes para web**
+
+-Lossless (sin pérdida):
+
+- Capturan todos los datos del archivo original.
+- No se pierde nada del archivo original.
+- Puede comprimirse, pero podrá reconstruir su imagen al estado original
+
+-Lossy (con pérdida):
+
+- Se aproximan a su imagen original.
+- Podría reducir la cantidad de colores en su imagen o analizar la imagen en busca de datos innecesarios.
+- Por consiguiente puede reducir su tamaño, lo que mejora el tiempo de carga de la página, pero pierde su calidad.
+- Los archivos tipo lossy son mucho más livianos que los archivos tipo lossless, por lo que son ideales para usar en sitios en donde el tamaño del archivo y la velocidad de descarga son importantes.
+
+![](https://static.platzi.com/media/user_upload/table%20for%20diferent%20images-42fdf349-a492-4ff5-afbd-1f437c804e4a.jpg)
+
+**Formatos de imagen para web**
+
+- GIF (Graphics Interchange Format): Formato de imagen sin pérdida, no se puede comprimir
+- PNG 8 (Portable Network Graphics): Formato de imagen sin pérdida, uso de colores de 256, se utiliza para logotipos e iconos para la página.
+- PNG 24 (Portable Network Graphics): Formato de imagen sin pérdida, utilización de colores ilimitados, alta calidad, si intentamos comprimir no ayudará demasiado por la gran cantidad de colores.
+- JPG / JPEG (Photographic Experts Group): Formato de imagen con pérdida, perdemos calidad a la hora de comprimirlas, pero llegan a ser óptimas para la carga en la página web.
+- SVG - Vector (Scalable Vector Graphics): Formato de imagen muy ligero sin pérdida, con svg no perdemos calidad, ya que está compuesta por vectores.
+- WebP: Es un formato gráfico en forma de contenedor que sustenta tanto compresión con pérdida como sin ella. ​​Fue desarrollado por Google.
