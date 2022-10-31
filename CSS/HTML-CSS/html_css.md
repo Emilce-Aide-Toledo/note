@@ -316,3 +316,87 @@ La etiqueta ```<video>```, tiene algunos atributos como:
 La etiqueta ```<source>```, se puede colocar dentro de una etiqueta ```<video>``` varias veces, para especificar diferentes rutas. Esto para asegurar que cualquier navegador pueda mostrar el video.
 
 ![](https://i.ibb.co/VwtXD5z/video.png)
+
+## Etiqueta form e input
+---
+[input](https://developer.mozilla.org/es/docs/Web/HTML/Element/input)
+
+[autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
+
+[required](https://www.w3schools.com/tags/att_input_required.asp)
+
+[select](https://developer.mozilla.org/es/docs/Web/HTML/Element/select)
+
+Para crear inputs con una lista de varias opciones, se puede desarrollar de dos maneras diferentes:
+
+1. Etiqueta ```<select>```: Esta permite crear la lista, con las etiquetas ```<option>```:
+
+![](https://static.platzi.com/media/user_upload/z-0f57dc8c-5851-463a-bff3-eee19ae48ad5.jpg)
+
+2. Etiqueta ```<input list = “”>```: De este modo, se puede utilizar una etiqueta ```<datalist>``` con etiquetas ```<option>``` dentro del input. De este modo, el usuario puede escribir dentro del input, y filtrar los resultados de la lista:
+
+![](https://static.platzi.com/media/user_upload/y-c05f72c2-699a-40e9-8f90-784a17834854.jpg)
+
+
+## Input type submit vs. Button tag
+---
+***input type submit*** = lo utilizaremos solo en los formularios
+
+***Button***= lo utilizaremos en cualquier otro tipo de boton dentro de nuestro proyecto
+```html
+<!-- // solo para formularios -->
+<input type="submit" value="Nombre" /> // con el atributo value podremos cambiar el texto que se vera en el
+
+<!-- // lo usaremos para cualquier caso en el que necesitemos un boton -->
+<button type="submit">Qué color te gusta?</button> 
+<!-- // si quieres usar un button en un formulario debes agregarle el type = "submit" -->
+```
+
+# CSS
+
+![](https://i0.wp.com/www.silocreativo.com/wp-content/uploads/2018/07/CSS3-modulos.png?resize=602%2C600&quality=100&strip=all&ssl=1)
+
+[CSS3](https://i.emezeta.com/weblog/css3-cheatsheet/css3-cheatsheet-2017-emezeta.pdf)
+
+[Pseudo-Clases](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes)
+
+[Pseudo Elementos](https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements)
+
+
+## Anatomía de una regla de CSS
+---
+![](https://aprendelibvrefiles.blob.core.windows.net/aprendelibvre-container/course/creacion_de_sitios_web/image/reglacss_xl.png)
+
+## Modelo de Caja
+---
+![](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-09-02%20a%20la%28s%29%2014.11.10-50b14fb3-9774-4f38-a405-39402028a560.jpg)
+
+![](https://static.platzi.com/media/user_upload/02.%20Margins-d3a68a26-ecb2-467d-bc8c-c396cc215b16.jpg)
+
+## Herencia CSS
+---
+
+- Inherit. Este es un valor por medio de una keyword que especifica que, a la propiedad que se la apliquemos debe de heredar los valores de su elemento padre. Podemos decir que la palabra Inherit significa “Usa el valor de mi padre”, si el elemento padre no tiene definido dicho valor el navegador seguirá el DOM hasta que encuentre un elemento superior que lo contenga, y en ultima instancia de no tenerlo ningún elemento superior se aplicara el valor por defecto.
+
+- Initial. Este valor pertenece a la especificación CSS3 y cuando aplicamos a una propiedad el valor initial estamos dando el valor inicial y predefinido por el navegador en cuestión.
+
+- Upset. Este valor unset es una combinación entre inherit y initial, cuando utilizamos este valor en una propiedad esta tratara de heredar el valor de su elemento padre si este esta disponible, de no ser así este valor colocará el valor de la propiedad en su valor inicial, como si usáramos inherit e initial juntos.
+
+![](https://www.w3.org/wiki/images/2/2f/Inheritance.png)
+
+## Especificidad en selectores
+---
+![](https://static.platzi.com/media/user_upload/8.Especificidad%20en%20selectores-1b4be9d0-ed66-4e86-b72e-071f0ba80091.jpg)
+
+![](https://static.platzi.com/media/user_upload/hhf8sfgmd2w72c7yp8o3-c54cd084-4c8e-430b-ba36-24cff04c75e8.jpg)
+
+![](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-09-02%20a%20la%28s%29%2014.14.35-d259a9cd-4e7a-4b40-b424-bdbf4bdb6241.jpg)
+
+![](https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%20%2863%29-212a5cb5-2d4c-49a0-98a2-d33b54457211.jpg)
+
+
+https://www.codecaptain.io/tools/css-specificity-calculator
+
+
+
+https://www.emezeta.com/
