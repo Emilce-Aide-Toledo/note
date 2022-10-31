@@ -397,6 +397,123 @@ Para crear inputs con una lista de varias opciones, se puede desarrollar de dos 
 
 https://www.codecaptain.io/tools/css-specificity-calculator
 
+<!-- 
+- Utilizar tanto id en CSS
+- Utilizar el !important
+- Utilizar la etiqueta <style> dentro del archivo html
+- Utilizar el atributo style dentro de las etiquetas html
+- Utilizar div para contener todo ignorando los header, nav, section, article, etc.
+- No utilizar la etiqueta <form> para hacer formularios
+- Utilizar las etiquetas <select> y <option> para hacer selectores o menús desplegables.
+- No nombrar el primer archivo html del proyecto como index.html
+- No tener archivos .css para cada pantalla de un proyecto.
+- Tener todo el css junto en un solo archivo.
+- No ponerle el atributo alt a una imagen
+- Poner imágenes dentro de <div> en vez de <figure>
+- Utilizar textos solo en mayúscula en HTML, en vez de utilizar el atributo de CSS, text-transform, con el valor uppercase. Ya que al hacer esto pareciera que estuvieras gritando.
+- Poner videos que se reproduzcan solos.
+- No optimizar las imágenes.
+- No tener cuidado de cual es el formato ideal para las imágenes y su respectivo peso.
+- No tener cuidado con la respectiva semántica de HTML, y con la sintaxis adecuada para CSS.
+No cerrar las etiquetas que se cierran en sí mismas como <br/>
+- No comentar partes esenciales de tu código.
+- No poner la etiqueta <meta name=”robots” content=”index,follow”> en tu proyecto para que los navegadores los puedan ubicar mejor.
+- No usar la etiqueta <meta name=”viewpor” content=”width=device-width, initial-scale=1.0”> para hacer tu proyecto responsive.
+- No poner el atributo autocomplete=”valor” en los campos de tu formulario para hacerle la vida más fácil al usuario
+- No usar el atributo required en los campos obligatorios de tu formulario como una primera capa de seguridad -->
+
+
+## Combinadores: Adjacent Siblings (combinators)
+---
+![](https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%20%2864%29-d9e9849d-5ced-4933-b653-eb9e6113f124.jpg)
+
+El combinador hermano adyacente ( +) separa dos selectores y coincide con el segundo elemento solo si sigue inmediatamente al primer elemento, y ambos son hijos del mismo padre element.
+
+![](https://static.platzi.com/media/user_upload/Artboard%201-7978db51-2e4d-4e50-91c8-d0bf8f139d23.jpg)
+
+[](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
+[](https://flukeout.github.io/)
+
+## Medidas
+---
+https://static.platzi.com/media/public/uploads/slidescss_1a0d5eaf-b5f6-4563-b80c-a073604d9628.pdf
+![](https://blog.avenuecode.com/hs-fs/hubfs/Images/Blog/unidade-relativa-vs-unidade-estatica.gif?width=906&height=330&name=unidade-relativa-vs-unidade-estatica.gif)
+
+***Medida absoluta:*** el valor de este no cambia y siempre sera el mismo asi la pagina cambie su tamaño, las medidas absolutas son:
+
+mm = milimetros
+
+cm = centimetros
+
+in = pulgada
+
+pc = picas
+
+px = pixel
+
+
+***Medidas relativas:*** estas medidas heredan el tamaño o se basan en algun tamaño que se alla seleccionado y el valor ira cambiando segun si la pagina cambia de tamaño, las medidas relativas son :
+
+%
+
+em
+
+rem
+
+
+![](https://i.ibb.co/g3zPGTD/medidas.png)
+
+## Medidas EM
+---
+**EM** = es un acronimo de elemento y lo que hace es tomar el tamaño de fuente que tenga el padre directo ejemplo:
+```css
+.container {
+   font-size: 20px
+   }
+
+.container div {
+    font-size: 2em
+   }
+```
+Aqui el tamaño del ```div``` que esta dentro de la clase container tenda un tamaño de 40px, ya que
+```
+1em = 20px
+```
+Otro ejemplo tenemos el siguiente caso :
+```css
+.container {
+   font-size: 20px
+   }
+
+.container div {
+    font-size: 2em
+   }
+
+.container div p {
+   font-size: 1.5em
+   }
+```
+A continuacion veremos que la etiqueta p tendra un tamaño de fuente de 60px ya que toma como referencia el tamaño de su padre ( 40px ) y haria la siguiente operacion ```40*1.5``` que es igual a 60, es por eso que la etiqueta p tomo el valor de 60px
+
+
+## Medidas REM
+---
+
+**REM:** funciona igual que el *em*, con la diferencia que es relativo al valor de la fuente del elemento *html*, y no tiene en cuenta el valor heredado o del elemento que lo contiene.
+
+Por defecto el html viene con un tamaño de fuente de 16px asi que siempre
+
+1 REM = 16PX
+
+Si queremos aplicar rem de una forma mas sencilla para no tener que hacer tantos calculos vamos a reescribir en css nuestro html
+```css
+html {
+      font-size: 62.5%; 
+     }
+```
+Esto le dara al html un valor de 10px ya que *16px - 62.5% = 10px*
+
+Entonces, ahora si le asignamos 2rem esera igual a 20px, o si le damos un valor de 1.5rem su valor sera de 15px
 
 
 https://www.emezeta.com/
