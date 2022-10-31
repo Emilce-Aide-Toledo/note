@@ -571,8 +571,38 @@ header {
 }
 ```
 
+## Web fonts
+---
+Las Web Fonts son grupos familiares de fuentes, los navegadores web poseen fuentes predeterminadas y dependiendo del mismo cada uno de ellos posee estilos diferentes.
+
+***Algunas Generic Families***
+
+- Serif: son un tipo de fuente de estilo formal o clásico como Times New Roman.
+
+- Sans-serif: No tienen acabado en las puntas, como: Verdana.
+
+- Cursive: Son las que tienen estilo cursivo.
+
+- Monospace: Son tipos de fuentes con espaciado entre las letras, como: Roboto mono.
+
+***¿Como puedo saber que tipo de fuente tengo instaladas en mi navegador?***
+
+Menú>Configuración>Diseño>Personalizar Fuentes>Fuente Serif/Fuente Sans-serif
+
+***¿Como puedo importar tipos de fuentes a mi proyecto?***
+
+- Ir a Google Fonts.
+
+https://fonts.google.com/
+
+- Seleccionar la fuente.
+- Seleccionar Estilo de fuente.
+- Agregar al proyecto, se considera buena práctica agregar las fuentes utilizando la etiqueta <link>, ya que la fuente cambia la fuente una vez que se haya cargado la página.
+Buenas Prácticas: cargar una sola fuente. Importarlas siempre en la etiqueta del head.
+
 
 ## Extra:
 ---
 ![](https://static.platzi.com/media/user_upload/formas-bordes-c5932f89-2b04-41ce-b330-fd2fd1f11519.jpg)
+
 https://www.emezeta.com/
