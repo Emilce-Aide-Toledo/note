@@ -515,5 +515,64 @@ Esto le dara al html un valor de 10px ya que *16px - 62.5% = 10px*
 
 Entonces, ahora si le asignamos 2rem esera igual a 20px, o si le damos un valor de 1.5rem su valor sera de 15px
 
+## Max/Min width
+---
+**Min-height:** se utiliza para definir la altura mínima de un elemento dado. Impide que el valor de la propiedad height llegue a ser más pequeña que la especificada en la altura mínima ( min-height ). Se refiere a la altura del bloque contenedor.
 
+**Max-height:** se utiliza para definir la altura máxima de un elemento dado. Impide que el valor de la altura pueda llegar a ser más grande que la de max-height . Porcentajes: se refiere a la altura del bloque contenedor.
+
+**Min-width:** se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width . Aplicable a: elementos de tipo bloque. Porcentajes: se refieren a la anchura del bloque contenedor.
+
+**Max-width:** define el ancho máximo que un elemento puede tener, max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width.
+
+
+## Display
+---
+En un elemento con ```display:inline``` no puedo usar margin ni padding arriba ni abajo, solo derecha e izquierda. Tampoco se puede aplicar width o height.
+
+En un elemento con ```display:block``` el contenido del elemento toma el 100% del width, se puede usar margin y padding por todos los lados.
+
+En un elemento con ```display:inline-block```, se puede usar margin y padding por todos lados, así como darle width y height, y el contenido es del mismo tamaño que el elemento.
+
+Etiquetas como ```p``` y ```div``` vienen por Default con un ```display:block```
+Etiquetas como span viene por Default con un ```display:inline```
+
+## Variables
+---
+![](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-09-02%20a%20la%28s%29%2015.10.24-39045091-9dad-40c0-bc79-6b095a22bb57.jpg)
+
+Nos servirán para guardar valores que reiteradamente ocuparemos en el desarrollo de nuestro proyecto. Realmente tiene mas utilidad en proyectos grandes. Pero claro, es importante conocerlo desde ahora.
+
+Declaración
+
+Normalmente se declara dentro de ```:root```  y serán variables globales.
+```css
+:root {
+  --primary-color: #322f3d;
+  --secondary-color: #8d93ab;
+  --font-color: white;
+  --font: 1.8rem;
+  --titles: 3rem;
+}
+```
+Indicando con – (Doble guión) y seguido del Nombre de la variable y el **valor**.
+
+¿Como utilizar las variables?
+
+Se utilizaran las variables gracias a la Función ```var()``` :
+```css
+header {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 10rem;
+  color: var(--font-color);
+  font-size: var(--titles);
+  text-align: center;
+}
+```
+
+
+## Extra:
+---
+![](https://static.platzi.com/media/user_upload/formas-bordes-c5932f89-2b04-41ce-b330-fd2fd1f11519.jpg)
 https://www.emezeta.com/
