@@ -597,12 +597,155 @@ https://fonts.google.com/
 
 - Seleccionar la fuente.
 - Seleccionar Estilo de fuente.
-- Agregar al proyecto, se considera buena práctica agregar las fuentes utilizando la etiqueta <link>, ya que la fuente cambia la fuente una vez que se haya cargado la página.
+- Agregar al proyecto, se considera buena práctica agregar las fuentes utilizando la etiqueta ```<link>```, ya que la fuente cambia la fuente una vez que se haya cargado la página.
 Buenas Prácticas: cargar una sola fuente. Importarlas siempre en la etiqueta del head.
 
+
+## Responsive design: media queries
+---
+![](https://www.geo-jobe.com/wp-content/uploads/2018/12/a114bcde3596d40684499375ee80eea3.gif)
+ 
+Crear diferentes archivos css dependiendo de a que tipo de dispositivo va enfocado.
+
+
+Se debe optimizar para todos los dispositivos. Hay tiene que tener en claro un par de conceptos:
+
+- **Break points:** cuando la pantalla sea de cierto tamaño, se generará un cambio para reposicionar o redimensionar los contenedores.
+
+- **Media Queries:** son condicionales. No es la mejor práctica pero aplicándolo al CSS: 
+```css
+@media (min-width: #;) {"código que se aplicará"}
+```
+
+ y se aplican para cada tamaño de dispositivo. El pixelaje dado será el break point.
+
+Lo más importante es diseñar para movil. Por lo que se debe diseñar con mobile first. Es decir, primero diseñar para celular, luego un break point para tablet y finalmente un break point para PC.
+
+Para aplicar media queries con buenas prácticas, hay que hacerlo en el header. Porque así solo se descarga el código necesario según el dispositivo, mientras que en CSS se descarga todo sin importar nada.
+
+En la tag link se colocan los atributos href, rel y, a partir del segundo archivo, el break point 
+```html
+ media = "screen and (min-width: #px"
+```
+ El style.css debe estar hecho para mobile. Luego se pueden crear otros archivos como tablet.css o desktop.css
+
+
+[Ver](https://www.mydevice.io/)
+
+## Estrategias de responsive: mostly fluid
+---
+El patrón Mostly fluid consiste, principalmente, en una cuadrícula fluida. Por lo general, en las pantallas grandes o medianas se mantiene el mismo tamaño y simplemente se ajustan los márgenes en las más anchas.
+
+## Layout shifter CSS
+---
+El patrón Layout shifter es el más adaptable, ya que posee varios puntos de interrupción en diferentes anchos de pantalla.
+
+## Column drop
+---
+En el caso de los diseños con varias columnas de ancho completo, durante el proceso de colocación de columnas éstas únicamente se colocan de forma vertical debido a que el ancho de la ventana es demasiado reducido para el contenido.
+
+## Imágenes responsive
+---
+```html
+<figure>
+	<picture>
+		<source …>
+		<source …>
+		<source …>
+		<img…>
+	</picture>
+<figcaption>…</figcaption>
+</figure>
+```
+https://lenguajehtml.com/html/multimedia/etiquetas-html-de-imagenes/#nuevas-etiquetas-de-im%C3%A1genes
+```html
+<picture> <!-- Agrupa una serie de imágenes. Etiqueta contenedora. -->
+```
+```html
+<source> <!-- Mostrará la imagen que cumpla una serie de criterios opcionales. -->
+```
+**Imágenes responsive**
+
+Otra ventaja interesante es que con ```<picture>``` podemos crear imágenes responsive que cambien dependiendo de características de las media queries (CSS). Por ejemplo, utilicemos min-width (tamaño mínimo de ancho de la pantalla) en el siguiente ejemplo:
+```html
+<picture>
+  <source media="(min-width: 600px)"
+          srcset="html5-logo-xl.png" />
+  <source media="(min-width: 300px) and (max-width: 600px)"
+          srcset="html5-logo-large.png" />
+  <source media="(max-width: 50px)"
+          srcset="html5-logo-small.png" />
+  <img src="html5-logo-medium.png" alt="HTML5 logo" />
+</picture>
+```
+De esta forma, estamos indicando que se muestren diferentes imágenes dependiendo de la resolución de pantalla (ancho) del dispositivo:
+
+- Dispositivos muy grandes (más de 600px): Muestra la imagen html5-logo-xl.png
+
+- Dispositivos grandes (entre 300-600px): Muestra la imagen html5-logo-large.png
+
+- Dispositivos pequeños (menos de 50px): Muestra la imagen html5-logo-small.png
+
+- Si no cumple las anteriores (o no soporta HTML5.1): Muestra la imagen html5-logo-medium.png
+
+![](https://i.ibb.co/10PxwJg/media.png)
+
+## Textos
+Utilizar medidas relativas.
+
+Para accesibilidad es recomendable utilizar medidas relativas (como rem) en vez de medidas absolutas (como px).
+
+Adicional a esto, hay otros aspectos importantes a considerar como lo son la accesibilidad en color, la accesibilidad en teclado y en formularios (por mencionar algunas):
+
+https://webaim.org/articles/contrast/
+
+https://webaim.org/techniques/keyboard/
+
+https://webaim.org/techniques/forms/
+
+## Semántica
+---
+La semántica está relacionada con las etiquetas contenedoras en HTML5, por ejemplo: header, main, sidebar y footer. Estas agregan información importante para aquellos que tengan problemas con la visualización de la página. Les permite a estos usuarios orientarse en qué sección de la página se encuentran.
+
+Por eso, es importante utilizar las diferentes etiquetas que HTML5 ofrece para tener la mejor semántica posible y la accesibilidad.
+
+## Labels, alt y title
+---
+“La accesibilidad es una acto de democratización al acceso de productos digitales, es la reivindicación del derecho de una persona con ciertas capacidades diferentes a acceder a las mismas plataformas.”
+
+- La semántica jugará un papel importante en la lectura de la plataforma por parte de un software
+- Es recomendable en cualquier situación el uso de medidas relativas (REM, EM) pues estas modificarán su tamaño en nuestra página cuando un usuario modifique el tamaño de las letras en la configuración de su navegador.
+- El uso de ```<label>``` en los formularios facilita la interacción de las personas y software con ellos. Por ejemplo al apretar la barra de espacio en un input que despligue un submenú, este se mostrará.
+- alt en las imágenes proporciona una descripción para un lector de contenido.
+- El atributo title puede ser usado en las etiquetas img y a para dar una descripción de sus contenidos al hacer hover.
+
+![](https://i.ibb.co/LYtNQph/accesibilidad.png)
 
 ## Extra:
 ---
 ![](https://static.platzi.com/media/user_upload/formas-bordes-c5932f89-2b04-41ce-b330-fd2fd1f11519.jpg)
 
+https://static.platzi.com/media/public/uploads/sheet-html_e27f26e2-8669-437b-84dd-912932693263.pdf
+
 https://www.emezeta.com/
+
+https://dribbble.com/
+
+https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading
+
+https://allthetags.com/
+
+
+Algo importante es que hay que preocuparse por los dispositivos de pantallas grandes, hoy en día hay personas que navegan por la web con sus pantallas ultra HD y monitores enormes, la mejor forma de evitar que la página se rompa en este tipo de pantallas es siempre estableciendo un max-width absoluto al html.
+
+<!-- Column drop: En el caso de los diseños con varias columnas de ancho completo, durante el proceso de colocación de columnas éstas únicamente se colocan de forma vertical debido a que el ancho de la ventana es demasiado reducido para el contenido.
+
+
+Layout shifter: El patrón Layout shifter es el más adaptable, ya que posee varios puntos de interrupción en diferentes anchos de pantalla.
+
+
+Tiny tweaks: El patrón Tiny tweaks permite realizar pequeños cambios en el diseño, como ajustar el tamaño de la fuente, cambiar el tamaño de las imágenes o desplazar el contenido de maneras muy poco significativas.
+
+
+Off canvas: En lugar de apilar contenido verticalmente, el patrón Off canvas coloca contenido menos usado (tal vez menús de navegación o de apps) fuera de la pantalla y solo lo muestra cuando el tamaño de la pantalla es suficientemente grande.
+ -->
